@@ -1,19 +1,81 @@
 * {
   padding: 0px;
   margin: 0px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
-body {
-  height: 100vh;
+body header {
+  top: 0px;
+  position: absolute;
+  height: 20%;
   width: 100vw;
+  background-color: #6d6730;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: aqua;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-bottom: 1px solid black;
 }
+
+body header .menu {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  background-color: #dfbf68;
+  width: 100%;
+  height: 40px;
+}
+
+body header .menu ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 40px;
+}
+
+body header .menu ul .item_list {
+  list-style: none;
+}
+
+body header .menu ul .item_list a {
+  text-decoration: none;
+  color: white;
+  -webkit-transition: .3s;
+  transition: .3s;
+  height: 100%;
+}
+
+body header .menu ul .item_list a:hover {
+  border-top: 1px solid white;
+  border-bottom: 1px solid white;
+}
+
 body main {
-  height: 400px;
-  width: 200px;
-  border-radius: 10px;
-  background-color: azure;
-}/*# sourceMappingURL=estilo.css.map */
+  margin-top: 20vh;
+  height: 80vh;
+  width: 100vw;
+  background-color: #6d6730;
+}
+/*# sourceMappingURL=estilo.css.map */
