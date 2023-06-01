@@ -1,81 +1,86 @@
 * {
   padding: 0px;
   margin: 0px;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 body header {
   top: 0px;
-  position: absolute;
-  height: 20%;
+  position: fixed;
+  height: 30%;
   width: 100vw;
-  background-color: #6d6730;
-  display: -webkit-box;
-  display: -ms-flexbox;
+  background-color: rgb(109, 103, 73);
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
   border-bottom: 1px solid black;
 }
-
+body header .img-logo {
+  height: 80px;
+  width: 80px;
+  margin-bottom: 10px;
+}
 body header .menu {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  background-color: #dfbf68;
-  width: 100%;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: rgb(221, 194, 123);
+  width: 90%;
   height: 40px;
 }
-
 body header .menu ul {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  justify-content: center;
+  align-items: center;
   gap: 40px;
+  height: 100%;
 }
-
 body header .menu ul .item_list {
   list-style: none;
 }
-
 body header .menu ul .item_list a {
   text-decoration: none;
   color: white;
-  -webkit-transition: .3s;
-  transition: .3s;
+  padding: 9px;
   height: 100%;
 }
-
 body header .menu ul .item_list a:hover {
-  border-top: 1px solid white;
-  border-bottom: 1px solid white;
+  z-index: 10;
+  border-top: 2px solid white;
+  border-bottom: 2px solid white;
 }
-
+body header .menu ul .productos .lista-de-productos {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  list-style: none;
+  position: absolute;
+  width: 100px;
+  gap: 10px;
+  padding: 10px;
+  top: 85%;
+  background-color: rgb(221, 194, 123);
+  display: none;
+}
+body header .menu ul .productos .lista-de-productos li {
+  text-align: center;
+  width: 100px;
+  height: auto;
+}
+body header .menu ul .productos .lista-de-productos li:hover {
+  background-color: rgb(219, 187, 107);
+}
+body header .menu ul .productos:hover .lista-de-productos {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
 body main {
   margin-top: 20vh;
   height: 80vh;
   width: 100vw;
-  background-color: #6d6730;
-}
-/*# sourceMappingURL=estilo.css.map */
+  background-color: rgb(109, 103, 73);
+}/*# sourceMappingURL=estilo.css.map */

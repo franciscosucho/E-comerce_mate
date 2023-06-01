@@ -8,22 +8,30 @@ body {
 
     header {
         top: 0px;
-        position: absolute;
-        height: 20%;
+        position: fixed;
+        height: 30%;
         width: 100vw;
-        background-color: rgb(109, 103, 48);
+        background-color: rgb(109, 103, 73);
         display: flex;
         justify-content: center;
         align-items: center;
+        flex-direction: column;
         border-bottom: 1px solid black;
+
+        .img-logo {
+            height: 80px;
+            width: 80px;
+            margin-bottom: 10px;
+        }
+
         .menu {
             display: flex;
             justify-content: center;
             align-items: center;
             flex-direction: column;
-            background-color: rgb(223, 191, 104);
+            background-color: rgb(221, 194, 123);
 
-            width: 100%;
+            width: 90%;
             height: 40px;
 
             ul {
@@ -31,6 +39,7 @@ body {
                 justify-content: center;
                 align-items: center;
                 gap: 40px;
+                height: 100%;
 
                 .item_list {
                     list-style: none;
@@ -38,19 +47,57 @@ body {
                     a {
                         text-decoration: none;
                         color: white;
-                        transition:.3s;
+                        padding: 9px;
                         height: 100%;
-                        &:hover{
-                            
-                            border-top: 1px solid white;
-                            border-bottom: 1px solid white;
-                            
-                        
+
+                        &:hover {
+                            z-index: 10;
+                            border-top: 2px solid white;
+                            border-bottom: 2px solid white;
+
+
                         }
                     }
                 }
 
+                .productos {
 
+                    .lista-de-productos {
+                        display: flex;
+                        align-items: center;
+                        justify-content: flex-start;
+
+                        list-style: none;
+                        position: absolute;
+                        width: 100px;
+                        gap: 10px;
+                        padding: 10px;
+                        top: 85%;
+                        background-color: rgb(221, 194, 123);
+                        display: none;
+
+                        li {
+                            text-align: center;
+                            width: 100px;
+                            height: auto;
+
+                            &:hover {
+                                background-color: rgb(219, 187, 107);
+                            }
+                        }
+                    }
+
+                    &:hover {
+                        .lista-de-productos {
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            flex-direction: column;
+
+
+                        }
+                    }
+                }
 
             }
 
@@ -61,7 +108,7 @@ body {
         margin-top: 20vh;
         height: 80vh;
         width: 100vw;
-        
-        background-color: rgb(109, 103, 48);
+
+        background-color: rgb(109, 103, 73);
     }
 }
