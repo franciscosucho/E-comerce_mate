@@ -3,38 +3,58 @@
     padding: 0;
     box-sizing: border-box;
 }
-
-
-
 body {
-   
+    overflow-y: scroll;
+    background-color: black;
+
     header {
-        background-color: rgb(109, 103, 73);
+        background-color: rgb(0, 0, 0);
         padding: 10px;
         display: flex;
         align-items: center;
         justify-content: center;
         flex-direction: column;
         border-bottom: 1px solid white;
+        position: fixed;
 
-
-        .cont-input {
+        .cont-header {
             background-color: rgba(212, 218, 218, 0);
-            border-bottom: .1px solid rgb(221, 194, 123);
-            ;
-            position: absolute;
             display: flex;
-            justify-content: center;
+            justify-content: space-around;
             align-items: center;
-            left: 26%;  
+            width: 100%;
 
-            input {
-                font-size: 1em;
-                border: none;
-                background-color: rgba(245, 245, 220, 0);
+            .cont-regis {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                gap: 10px;
 
-                &:focus {
-                    outline: none;
+
+                p {
+                    color: rgb(221, 194, 123);
+                    transition: all .3s;
+
+                    &:hover {
+                        border-bottom: 1px solid rgb(221, 194, 123);
+                    }
+                }
+            }
+
+
+            .cont-input {
+                border-bottom: 1px solid rgb(221, 194, 123);
+                border-width: 0.5px;
+
+                input {
+                    font-size: 1em;
+                    border: none;
+                    width: 150px;
+                    background-color: rgba(245, 245, 220, 0);
+
+                    &:focus {
+                        outline: none;
+                    }
                 }
             }
 
@@ -49,15 +69,16 @@ body {
         }
 
         img {
-            height: 150px;
-            width: 150px;
+            height: 250px;
+            width: 250px;
+            border-radius: 50%;
         }
 
         nav {
             display: flex;
             justify-content: center;
             align-items: center;
-            max-width: 900px;
+            width: 90%;
             height: 40px;
             margin-top: 10px;
             background-color: rgb(221, 194, 123);
@@ -68,7 +89,7 @@ body {
                 display: flex;
                 justify-content: center;
                 gap: 70px;
-                width: 80vw;
+                width: 100vw;
 
                 li {
 
@@ -82,11 +103,16 @@ body {
                         font-weight: 100;
                         text-decoration: none;
                         color: rgb(139, 138, 138);
+
                     }
 
                     &:hover {
 
                         color: white;
+
+                        a {
+                            color: white;
+                        }
 
                         .menu-vertical {
                             display: block;
@@ -128,16 +154,49 @@ body {
     }
 
     main {
-        padding-top: 40px;
-        display: flex;
-        justify-content: center;
+        padding-top: 60px;
+        background-color: rgb(0, 0, 0);
         height: 100vh;
         width: 100vw;
-        background-color: rgb(109, 103, 73);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        gap: 40px;
 
         h1 {
             color: rgb(221, 194, 123);
             font-family: 'Bonny', serif;
+        }
+
+        .cont-productos {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            gap: 20px;
+            .articulo {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+                background-color: rgba(240, 255, 255, 0.534);
+                width: 300px;
+                height: 300px;
+                border-radius: 10px;
+                gap: 10px;
+                img {
+                    width: 150px;
+                    height: 200px;
+                    border-radius: 10px;
+
+                }
+                p{
+                    color: rgb(221, 194, 123);
+                    font-size: 1.4em;
+
+                }
+            }
         }
     }
 }
