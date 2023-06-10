@@ -5,12 +5,12 @@
 }
 body {
     overflow-y: scroll;
-    background-color: black;
-
+    background-color: rgb(37, 37, 37);
     header {
         background-color: rgb(0, 0, 0);
         padding: 10px;
         display: flex;
+        z-index: 10;
         align-items: center;
         justify-content: center;
         flex-direction: column;
@@ -54,6 +54,7 @@ body {
 
                     &:focus {
                         outline: none;
+                        color: white;
                     }
                 }
             }
@@ -154,9 +155,11 @@ body {
     }
 
     main {
-        padding-top: 60px;
-        background-color: rgb(0, 0, 0);
-        height: 100vh;
+
+        top: 30%;
+        position: absolute;
+        background-color: rgb(37, 37, 37);
+        height: 100%;
         width: 100vw;
         display: flex;
         justify-content: center;
@@ -170,11 +173,11 @@ body {
         }
 
         .cont-productos {
-            display: flex;
-            justify-content: center;
-            align-items: center;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            padding-left: 50px;
+            gap: 10px;
             width: 100%;
-            gap: 20px;
             .articulo {
                 display: flex;
                 justify-content: center;
