@@ -5,17 +5,22 @@
     transition: height .3s;
 }
 body {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
     overflow-y: scroll;
     background-color: rgb(0, 0, 0);
     header {
         background-color: rgb(0, 0, 0);
         padding: 10px;
+        height: 30vh;
         display: flex;
         z-index: 100;
         align-items: center;
         justify-content: center;
         flex-direction: column;
         position: fixed;
+        top: 0px;
         transition: height .3s;
 
         .cont-header {
@@ -156,9 +161,8 @@ body {
     }
  
     main {
+        margin-top: 400px;
 
-        top: 60%;
-        position: absolute;
         background-color: rgb(0, 0, 0);
         height: 100%;
         width: 100vw;
@@ -190,12 +194,17 @@ body {
                 flex-direction: column;
                 gap: 20px;
                 list-style: none;
-                color: rgb(221, 194, 123);;
+                color: rgb(221, 194, 123);
+                li{
+                    &:hover{
+                        background-color: rgba(240, 248, 255, 0.164);
+                    }
+                }
             }
 
         }
         .cont-productos {
-            padding-top: 200px;
+            padding-top: 00px;
             display: grid;
             grid-template-columns: repeat(2, 1fr);
             padding-left: 50px;
