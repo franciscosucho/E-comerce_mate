@@ -37,11 +37,12 @@ body header .cont-header .cont-regis {
   align-items: center;
   gap: 10px;
 }
-body header .cont-header .cont-regis p {
+body header .cont-header .cont-regis a {
+  text-decoration: none;
   color: rgb(221, 194, 123);
   transition: all 0.3s;
 }
-body header .cont-header .cont-regis p:hover {
+body header .cont-header .cont-regis a:hover {
   border-bottom: 1px solid rgb(221, 194, 123);
 }
 body header .cont-header .cont-input {
