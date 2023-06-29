@@ -3,14 +3,16 @@
     padding: 0;
     box-sizing: border-box;
 }
+
 body {
     display: flex;
     justify-content: flex-end;
     align-items: center;
     overflow-y: scroll;
-    background-color: rgb(54, 49,31);
+    background-color: rgb(54, 49, 31);
+
     header {
-        background-color:#d8bea0;
+        background-color: #d8bea0;
         padding: 10px;
         height: 30vh;
         display: flex;
@@ -24,7 +26,7 @@ body {
         transition: height ease-in-out .5s;
 
         .cont-header {
-            background-color:rgb(216, 190, 160);
+            background-color: rgb(216, 190, 160);
             display: flex;
             justify-content: space-around;
             align-items: center;
@@ -50,9 +52,10 @@ body {
 
 
             .cont-input {
-                border-bottom: 1px solid rgb(54, 36, 23);;
+                border-bottom: 1px solid rgb(54, 36, 23);
+                ;
                 border-width: 0.5px;
-                
+
                 input {
                     color: rgb(54, 36, 23);
                     font-size: 1em;
@@ -92,9 +95,10 @@ body {
             width: 90%;
             height: 40px;
             margin-top: 20px;
-            background-color: rgb(107, 96, 65);
+            background-color: rgb(54, 49, 31);
             font-size: 20px;
             margin-bottom: 200px;
+
             .menu-horizontal {
                 list-style: none;
                 display: flex;
@@ -106,15 +110,19 @@ body {
 
                     display: block;
                     padding: 20px 0px;
-                    color: white;
+                    color: rgb(255, 255, 255);
                     text-decoration: none;
 
                     a {
+
                         font-size: .8em;
                         font-weight: 100;
                         text-decoration: none;
-                        color: rgb(0, 0, 0);
+                        color: rgb(255, 254, 254);
+                        &:hover{
+                            border-bottom: 1px solid white;
 
+                        }
                     }
 
                     &:hover {
@@ -122,6 +130,7 @@ body {
                         color: white;
 
                         a {
+
                             color: white;
                         }
 
@@ -141,12 +150,14 @@ body {
                         background-color: rgb(107, 96, 65);
 
                         li {
+
                             display: flex;
                             justify-content: flex-start;
                             align-items: center;
                             height: 10px;
 
                             p {
+
                                 padding-left: 4px;
                                 color: rgb(7, 7, 7);
                                 font-size: .8em;
@@ -163,11 +174,11 @@ body {
             }
         }
     }
- 
+
     main {
         margin-top: 400px;
 
-        background-color: rgb(54, 49,31);
+        background-color: rgb(54, 49, 31);
         height: 100%;
         width: 100vw;
         display: flex;
@@ -180,9 +191,10 @@ body {
             color: rgb(221, 194, 123);
             font-family: 'Bonny', serif;
         }
-        .filtro{
+
+        .filtro {
             border-radius: 20px;
-            border: 1px solid rgb(231, 235,197);
+            border: 1px solid rgb(231, 235, 197);
             padding: 10px;
             position: fixed;
             display: flex;
@@ -193,36 +205,45 @@ body {
             left: 2%;
             top: 50%;
             height: 30%;
-            h3{
+
+            h3 {
                 color: rgb(197, 172, 109);
             }
-            ul{
+
+            ul {
                 display: flex;
                 flex-direction: column;
                 gap: 20px;
                 list-style: none;
                 color: rgb(221, 194, 123);
-                li{
+
+                li {
                     cursor: pointer;
-                    &:hover{
+
+                    &:hover {
                         background-color: rgba(240, 248, 255, 0.164);
                     }
                 }
             }
 
         }
+
         .cont-productos {
-            
+
             padding-top: 00px;
             display: grid;
             grid-template-columns: repeat(2, 1fr);
             padding-left: 50px;
             gap: 10px;
             width: 70%;
-            #load{
+            transition: ease transform .6s;
+
+            #load {
                 display: none;
             }
+
             .articulo {
+
                 display: flex;
                 justify-content: center;
                 align-items: center;
@@ -231,51 +252,64 @@ body {
                 height: 600px;
                 border-radius: 10px;
                 gap: 10px;
-                img { 
+                object-fit: fill;
+                transition: transform .9s ease;
+
+                &:hover {
+                    background-color: rgba(29, 29, 29, 0.199);
+                }
+
+                img {
                     border: 1px solid black;
                     width: 400px;
                     height: 500px;
                     border-radius: 10px;
 
                 }
-                p{
+
+                p {
                     color: rgb(221, 194, 123);
                     font-size: 1.4em;
 
                 }
-                &.filtro{
+
+                &.filtro {
                     display: none;
                 }
+
             }
         }
     }
 }
-@media(max-width:1000px){
-body{
+
+@media(max-width:1000px) {
+    body {
 
 
 
-    main{
-        h1 {
-            margin-left: 50px;
-            color: rgb(221, 194, 123);
-            font-family: 'Bonny', serif;
+        main {
+            h1 {
+                margin-left: 50px;
+                color: rgb(221, 194, 123);
+                font-family: 'Bonny', serif;
+            }
+
+            .filtro {
+
+                top: 60%;
+
+
+            }
+
+            .cont-productos {
+                grid-template-columns: repeat(1, 1fr);
+
+
+            }
+
+
+
+
         }
-        .filtro{
-
-            top: 60%;
-
-
-        }
-        .cont-productos {
-            grid-template-columns: repeat(1, 1fr);
-
-
-        }
-
-
-
-
     }
-}
 }

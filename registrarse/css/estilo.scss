@@ -162,5 +162,27 @@ box-sizing: border-box;
                 }
             }
         }
-
+        main{ 
+            background-color: white;
+            z-index: 100;
+            width: 100%;
+            height: 40%;
+            position: absolute;
+            top: 10vh;
+            form{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+                background-color: rgb(80, 77, 77);
+                input{
+                    background-color: aqua;
+                }
+    
+    
+    
+            }
+    
+        }
+        
 }
