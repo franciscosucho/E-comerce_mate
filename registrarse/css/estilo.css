@@ -1,6 +1,6 @@
 * {
-  margin: 0;
-  padding: 0;
+  margin: 0px;
+  padding: 0px;
   box-sizing: border-box;
 }
 
@@ -132,97 +132,4 @@ body header nav .menu-horizontal li .menu-vertical li p {
 }
 body header nav .menu-horizontal li .menu-vertical li:hover p {
   color: white;
-}
-body main {
-  margin-top: 400px;
-  background-color: rgb(54, 49, 31);
-  height: 100%;
-  width: 100vw;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  gap: 40px;
-}
-body main h1 {
-  color: rgb(221, 194, 123);
-  font-family: "Bonny", serif;
-}
-body main .filtro {
-  border-radius: 20px;
-  border: 1px solid rgb(231, 235, 197);
-  padding: 10px;
-  position: fixed;
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-  justify-content: flex-start;
-  align-items: flex-start;
-  left: 2%;
-  top: 50%;
-  height: 30%;
-}
-body main .filtro h3 {
-  color: rgb(197, 172, 109);
-}
-body main .filtro ul {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-  list-style: none;
-  color: rgb(221, 194, 123);
-}
-body main .filtro ul li {
-  cursor: pointer;
-}
-body main .filtro ul li:hover {
-  background-color: rgba(240, 248, 255, 0.164);
-}
-body main .cont-productos {
-  padding-top: 0px;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  padding-left: 50px;
-  gap: 10px;
-  width: 70%;
-}
-body main .cont-productos #load {
-  display: none;
-}
-body main .cont-productos .articulo {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  width: 500px;
-  height: 600px;
-  border-radius: 10px;
-  gap: 10px;
-}
-body main .cont-productos .articulo img {
-  border: 1px solid black;
-  width: 400px;
-  height: 500px;
-  border-radius: 10px;
-}
-body main .cont-productos .articulo p {
-  color: rgb(221, 194, 123);
-  font-size: 1.4em;
-}
-body main .cont-productos .articulo.filtro {
-  display: none;
-}
-
-@media (max-width: 1000px) {
-  body main h1 {
-    margin-left: 50px;
-    color: rgb(221, 194, 123);
-    font-family: "Bonny", serif;
-  }
-  body main .filtro {
-    top: 60%;
-  }
-  body main .cont-productos {
-    grid-template-columns: repeat(1, 1fr);
-  }
 }/*# sourceMappingURL=estilo.css.map */
