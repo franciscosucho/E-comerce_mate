@@ -164,10 +164,11 @@ body main .filtro {
   align-items: flex-start;
   left: 2%;
   top: 50%;
-  height: 30%;
+  height: 23%;
 }
 body main .filtro h3 {
   color: rgb(197, 172, 109);
+  border-bottom: 1px solid rgb(197, 172, 109);
 }
 body main .filtro ul {
   display: flex;
@@ -175,6 +176,8 @@ body main .filtro ul {
   gap: 20px;
   list-style: none;
   color: rgb(221, 194, 123);
+  font-family: "Cabinet Grotesk", sans-serif;
+  font-size: 14px;
 }
 body main .filtro ul li {
   cursor: pointer;
@@ -206,9 +209,13 @@ body main .cont-productos .articulo {
   -o-object-fit: fill;
      object-fit: fill;
   transition: transform 0.9s ease;
+  transition: 0.2s;
 }
 body main .cont-productos .articulo:hover {
   background-color: rgba(29, 29, 29, 0.199);
+}
+body main .cont-productos .articulo:hover p {
+  color: rgb(207, 180, 110);
 }
 body main .cont-productos .articulo img {
   border: 1px solid black;
@@ -217,7 +224,7 @@ body main .cont-productos .articulo img {
   border-radius: 10px;
 }
 body main .cont-productos .articulo p {
-  color: rgb(221, 194, 123);
+  color: rgb(126, 113, 81);
   font-size: 1.4em;
 }
 body main .cont-productos .articulo.filtro {

@@ -204,10 +204,11 @@ body {
             align-items: flex-start;
             left: 2%;
             top: 50%;
-            height: 30%;
+            height: 23%;
 
             h3 {
                 color: rgb(197, 172, 109);
+                border-bottom: 1px solid  rgb(197, 172, 109);
             }
 
             ul {
@@ -216,7 +217,8 @@ body {
                 gap: 20px;
                 list-style: none;
                 color: rgb(221, 194, 123);
-
+                font-family: 'Cabinet Grotesk', sans-serif;
+                font-size: 14px;
                 li {
                     cursor: pointer;
 
@@ -254,9 +256,12 @@ body {
                 gap: 10px;
                 object-fit: fill;
                 transition: transform .9s ease;
-
+                transition: .2s;
                 &:hover {
                     background-color: rgba(29, 29, 29, 0.199);
+                    p{
+                        color: rgb(207, 180, 110);
+                    }
                 }
 
                 img {
@@ -264,11 +269,10 @@ body {
                     width: 400px;
                     height: 500px;
                     border-radius: 10px;
-
                 }
 
                 p {
-                    color: rgb(221, 194, 123);
+                    color: rgb(126, 113, 81);
                     font-size: 1.4em;
 
                 }
