@@ -5,8 +5,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>registrarse</title>
     <link rel="stylesheet" href="/registrarse/css/estilo.css">
+    <link rel="icon" type="image/x-icon" href="/La choza del matye.png">
+    <link href="https://api.fontshare.com/v2/css?f[]=boska@900&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -14,13 +16,12 @@
         <div class="cont-header">
             <div class="cont-input">
                 <input id="buscador" type="text" placeholder="Buscar">
-                <span class="material-symbols-outlined">search </span>
             </div>
 
             <img class="img-logo" src="/La choza del matye.png" alt="">
             <div class="cont-regis">
                 <a href="/registrarse/resgistrase.html" target="_blank">Registrase</a>
-                <a >|</a>
+                <a>|</a>
                 <a href="#">Iniciar sesion</a>
             </div>
         </div>
@@ -30,10 +31,10 @@
             <ul class="menu-horizontal">
                 <li>
 
-                    <a href="#">Inicio</a>
+                    <a href="/index.html">Inicio</a>
 
                 </li>
-               
+
                 <li>
 
                     <a href="https://www.instagram.com/fran.sucho/" target="_blank">Contacto</a>
@@ -41,8 +42,17 @@
             </ul>
         </nav>
     </header>
-    <h1>form</h1>
+    <main>
+        
+        <form action="registrase.php" method="post">
+            <h1>Registrarse</h1>
+            <input type="text" name="nombre" placeholder="Nombre completo">
+            <input type="tel" name="telefono" placeholder="Telefono">
+            <input type="email" name="email" placeholder="Email">
+            <input type="submit" name="enviar" id="btn">
 
+        </form>
+    </main>
 </body>
 
 </html>

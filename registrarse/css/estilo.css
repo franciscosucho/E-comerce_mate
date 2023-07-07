@@ -8,6 +8,7 @@ body {
   display: flex;
   justify-content: flex-end;
   align-items: center;
+  flex-direction: row;
   overflow-y: scroll;
   background-color: rgb(54, 49, 31);
 }
@@ -132,4 +133,54 @@ body header nav .menu-horizontal li .menu-vertical li p {
 }
 body header nav .menu-horizontal li .menu-vertical li:hover p {
   color: white;
+}
+body main {
+  background-color: rgb(54, 49, 31);
+  width: 100%;
+  height: 80%;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 30vh;
+}
+body main form {
+  margin: 100px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
+  height: 60%;
+  background-color: rgba(80, 77, 77, 0.411);
+  border-radius: 10px;
+  width: 30em;
+}
+body main form h1 {
+  font-family: "Boska", serif;
+  font-size: 3.2em;
+  color: white;
+}
+body main form #btn {
+  background-color: rgba(153, 152, 152, 0.2941176471);
+  border-radius: 3em;
+  width: 120px;
+}
+body main form #btn:hover {
+  background-color: rgb(133, 133, 133);
+}
+body main form input {
+  padding: 10px;
+  transition: 0.2s;
+  width: 50%;
+  height: 3em;
+  background-color: rgba(255, 255, 255, 0);
+  border: none;
+  border-bottom: 1px solid rgb(88, 88, 88);
+}
+body main form input:focus {
+  outline: none;
+  color: rgb(131, 131, 131);
+}
+body main form input:hover {
+  background-color: rgba(88, 88, 88, 0.103);
 }/*# sourceMappingURL=estilo.css.map */
