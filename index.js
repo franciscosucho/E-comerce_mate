@@ -10,6 +10,9 @@ var filtro_termos = document.querySelector(".filtro_termos");
 var filtro_bombillas = document.querySelector(".filtro_bombillas");
 var filtro_mates = document.querySelector(".filtro_mates");
 var inp = document.querySelector(".input");
+var cont_productos = document.querySelector(".cont-productos");
+var loader = document.querySelector(".custom-loader");
+
 
 window.addEventListener('scroll', function () {
     var cont_header = this.document.querySelector(".cont-header");
@@ -36,35 +39,61 @@ window.addEventListener('scroll', function () {
 
 
 document.addEventListener('keyup', e => {
+    animacion();
     //esto le da un evento a todo el documento cuando se presiona una tecla
     if (e.target.matches("#buscador")) {
+        var productosEncontrados = false;
+
         document.querySelectorAll('.name').forEach(art => {
             var contenedorPadre = art.parentNode;
-            art.textContent.toLowerCase().includes(e.target.value.toLowerCase())
-                ? contenedorPadre.classList.remove('filtro')
-                : contenedorPadre.classList.add('filtro')
-        })
+            if (art.textContent.toLowerCase().includes(e.target.value.toLowerCase())) {
+                contenedorPadre.classList.remove('filtro');
+                productosEncontrados = true;
+            } else {
+                contenedorPadre.classList.add('filtro');
+            }
+        });
+
+        if (!productosEncontrados) {
+            no_encontrado.remove();
+            noENcontrado()
+
+        }
     }
+
 })
 
+var no_encontrado = document.createElement('h3');
+function noENcontrado() {
+    
+    no_encontrado.setAttribute('id', 'no_encontrado');
+    no_encontrado.style.backgroundColor = 'red';
+    no_encontrado.style.textAlign="center"
+    no_encontrado.textContent = 'No se encontró ese producto.';
+    cont_productos.appendChild(no_encontrado);
+}
 
 
 filtro_termos.addEventListener("click", () => {
+
     reset()
     filtro('imperial', 'camionero', 'bombilla', 'torpedo')
 })
 
 filtro_torpedos.addEventListener("click", () => {
+
     reset()
     filtro('imperial', 'camionero', 'bombilla', 'termo')
 })
 filtro_mates.addEventListener("click", () => {
+
     reset()
     filtro('bombilla', 'termo')
 })
 filtro_todo.addEventListener("click", () => { reset() });
 
 filtro_imperial.addEventListener("click", () => {
+
     reset()
     filtro('torpedo', 'camionero', 'bombilla', 'termo')
 })
@@ -87,6 +116,7 @@ function filtro(...clases) {
     });
 }
 function reset() {
+    animacion();
     let productos = document.querySelectorAll(".articulo");
     productos.forEach(producto => {
         producto.style.display = 'flex';
@@ -108,4 +138,14 @@ function restore(...elementos) {
         // Aplica los cambios de estilo al elemento
         elemento.style.transform = 'scale(1)';
     });
+}
+function animacion() {
+    loader.style.display="flex"
+    cont_productos.style.display = "none";
+    // Esperar 1 segundo (1000 milisegundos)
+    setTimeout(function () {
+        loader.style.display="none"
+        // Ocultar la animación de carga después de 1 segundo
+        cont_productos.style.display = "grid";
+    }, 1000);
 }

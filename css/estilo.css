@@ -2,6 +2,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  transition: all 0.2s ease-in-out;
 }
 
 body {
@@ -44,7 +45,19 @@ body header .cont-header .cont-regis a {
   transition: all 0.3s;
 }
 body header .cont-header .cont-regis a:hover {
-  background-color: rgba(153, 152, 152, 0.2941176471);
+  animation: borderAnimations 1s infinite;
+  box-shadow: 0 1px 0 0 rgb(0, 0, 0);
+}
+@keyframes borderAnimations {
+  0% {
+    box-shadow: 0 1px 0 0rgb 221, 194, 123;
+  }
+  50% {
+    box-shadow: 0 1px 0 0 rgb(0, 0, 0);
+  }
+  100% {
+    box-shadow: 0 1px 0 0 rgb(0, 0, 0);
+  }
 }
 body header .cont-header .cont-input {
   border-bottom: 1px solid rgb(54, 36, 23);
@@ -149,6 +162,17 @@ body main h1 {
   color: rgb(221, 194, 123);
   font-family: "Bonny", serif;
 }
+body main .custom-loader {
+  position: relative;
+  display: none;
+  width: 200px;
+  height: 200px;
+  border: 6px solid #81531d;
+  border-top-color: transparent;
+  border-radius: 50%;
+  animation: spin 1.5s linear infinite;
+  margin: 0 auto;
+}
 body main .filtro {
   border-radius: 20px;
   border: 1px solid rgb(231, 235, 197);
@@ -177,7 +201,19 @@ body main .filtro ul li {
   cursor: pointer;
 }
 body main .filtro ul li:hover {
-  background-color: rgba(240, 248, 255, 0.164);
+  animation: borderAnimation 1s infinite;
+  box-shadow: 0 1px 0 0 rgb(221, 194, 123);
+}
+@keyframes borderAnimation {
+  0% {
+    box-shadow: 0 1px 0 0rgb 221, 194, 123;
+  }
+  50% {
+    box-shadow: 0 1px 0 0 rgb(221, 194, 123);
+  }
+  100% {
+    box-shadow: 0 1px 0 0 rgb(221, 194, 123);
+  }
 }
 body main .cont-productos {
   padding-top: 0px;
@@ -186,6 +222,14 @@ body main .cont-productos {
   padding-left: 50px;
   gap: 10px;
   width: 70%;
+}
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
 body main .cont-productos #load {
   display: none;
@@ -200,6 +244,12 @@ body main .cont-productos .articulo {
   border-radius: 10px;
   gap: 10px;
 }
+body main .cont-productos .articulo:hover {
+  background-color: rgba(12, 12, 12, 0.2274509804);
+}
+body main .cont-productos .articulo:hover p {
+  color: rgb(211, 184, 117);
+}
 body main .cont-productos .articulo img {
   border: 1px solid black;
   width: 400px;
@@ -207,7 +257,8 @@ body main .cont-productos .articulo img {
   border-radius: 10px;
 }
 body main .cont-productos .articulo p {
-  color: rgb(221, 194, 123);
+  transition: all 0.2s ease-in-out;
+  color: rgb(117, 103, 65);
   font-size: 1.4em;
 }
 body main .cont-productos .articulo.filtro {
