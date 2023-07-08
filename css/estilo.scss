@@ -49,17 +49,20 @@ body {
                         animation: borderAnimations 1s infinite;
                         box-shadow: 0 1px 0 0 rgb(0, 0, 0);
                     }
+
                     @keyframes borderAnimations {
                         0% {
-                          box-shadow: 0 1px 0 0rgb(221, 194, 123);
+                            box-shadow: 0 1px 0 0rgb(221, 194, 123);
                         }
+
                         50% {
-                          box-shadow: 0 1px 0 0 rgb(0, 0, 0);
+                            box-shadow: 0 1px 0 0 rgb(0, 0, 0);
                         }
+
                         100% {
-                          box-shadow: 0 1px 0 0 rgb(0, 0, 0);
+                            box-shadow: 0 1px 0 0 rgb(0, 0, 0);
                         }
-                      }
+                    }
                 }
             }
 
@@ -150,32 +153,69 @@ body {
 
                     .menu-vertical {
                         margin-top: 5px;
+                        padding-top: 20px;
                         position: absolute;
                         display: none;
                         list-style: none;
                         width: 200px;
+                        height: 185px;
                         border: 1px solid black;
                         background-color: rgb(107, 96, 65);
-
+                      
                         li {
-                            display: flex;
-                            justify-content: flex-start;
-                            align-items: center;
-                            height: 10px;
-
+                          display: flex;
+                          justify-content: flex-start;
+                          align-items: center;
+                          height: 10px;
+                      
+                          p {
+                            height: 40px;
+                            padding-left: 4px;
+                            color: rgb(7, 7, 7);
+                            font-size: 0.8em;
+                          }
+                      
+                          &:hover {
+                            .sub-menu {
+                              display: block;
+                            }
                             p {
-                                padding-left: 4px;
-                                color: rgb(7, 7, 7);
-                                font-size: .8em;
+                              color: white;
                             }
-
-                            &:hover {
-                                p {
-                                    color: white;
-                                }
-                            }
+                          }
                         }
-                    }
+                      
+                        .sub-menu { 
+                            position: absolute;
+                            margin-left: 100%;
+                            margin-top: 41px;
+                          display: none;
+                          list-style: none;
+                          background-color: rgb(107, 96, 65);
+                      
+                          li {
+                            padding-bottom: 20px;
+                            height: 10px;
+                            font-size: 0.8em;
+                            color: black;
+                            padding-left: 4px;
+                            border-left: 1px solid black;
+                            border-right: 1px solid black;
+                            border-top: 1px solid black;
+                            width: 200px;
+                            
+                           
+                      
+                            &:hover {
+                              color: white;
+                            }
+                          }
+                          .ultimo{
+                            border-bottom: 1px solid black;
+                        }
+                        }
+                      }
+                      
                 }
             }
         }
@@ -196,6 +236,7 @@ body {
             color: rgb(221, 194, 123);
             font-family: 'Bonny', serif;
         }
+
         .custom-loader {
             position: relative;
             display: none;
@@ -207,6 +248,7 @@ body {
             animation: spin 1.5s linear infinite;
             margin: 0 auto;
         }
+
         .filtro {
             border-radius: 20px;
             border: 1px solid rgb(231, 235, 197);
@@ -239,17 +281,20 @@ body {
                         animation: borderAnimation 1s infinite;
                         box-shadow: 0 1px 0 0 rgb(221, 194, 123);
                     }
+
                     @keyframes borderAnimation {
                         0% {
-                          box-shadow: 0 1px 0 0rgb(221, 194, 123);
+                            box-shadow: 0 1px 0 0rgb(221, 194, 123);
                         }
+
                         50% {
-                          box-shadow: 0 1px 0 0 rgb(221, 194, 123);
+                            box-shadow: 0 1px 0 0 rgb(221, 194, 123);
                         }
+
                         100% {
-                          box-shadow: 0 1px 0 0 rgb(221, 194, 123);
+                            box-shadow: 0 1px 0 0 rgb(221, 194, 123);
                         }
-                      }
+                    }
                 }
             }
 
@@ -257,16 +302,17 @@ body {
 
         .cont-productos {
 
-            
+
 
             @keyframes spin {
                 0% {
-                  transform: rotate(0deg);
+                    transform: rotate(0deg);
                 }
+
                 100% {
-                  transform: rotate(360deg);
+                    transform: rotate(360deg);
                 }
-              }
+            }
 
             padding-top: 00px;
             display: grid;
@@ -288,14 +334,16 @@ body {
                 height: 600px;
                 border-radius: 10px;
                 gap: 10px;
-                
-                &:hover{
+
+                &:hover {
 
                     background-color: #0c0c0c3a;
-                    p{
-                       color: rgb(211, 184, 117);
+
+                    p {
+                        color: rgb(211, 184, 117);
                     }
                 }
+
                 img {
                     border: 1px solid black;
                     width: 400px;

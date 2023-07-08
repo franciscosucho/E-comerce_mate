@@ -126,10 +126,12 @@ body header nav .menu-horizontal li:hover .menu-vertical {
 }
 body header nav .menu-horizontal li .menu-vertical {
   margin-top: 5px;
+  padding-top: 20px;
   position: absolute;
   display: none;
   list-style: none;
   width: 200px;
+  height: 185px;
   border: 1px solid black;
   background-color: rgb(107, 96, 65);
 }
@@ -140,12 +142,41 @@ body header nav .menu-horizontal li .menu-vertical li {
   height: 10px;
 }
 body header nav .menu-horizontal li .menu-vertical li p {
+  height: 40px;
   padding-left: 4px;
   color: rgb(7, 7, 7);
   font-size: 0.8em;
 }
+body header nav .menu-horizontal li .menu-vertical li:hover .sub-menu {
+  display: block;
+}
 body header nav .menu-horizontal li .menu-vertical li:hover p {
   color: white;
+}
+body header nav .menu-horizontal li .menu-vertical .sub-menu {
+  position: absolute;
+  margin-left: 100%;
+  margin-top: 41px;
+  display: none;
+  list-style: none;
+  background-color: rgb(107, 96, 65);
+}
+body header nav .menu-horizontal li .menu-vertical .sub-menu li {
+  padding-bottom: 20px;
+  height: 10px;
+  font-size: 0.8em;
+  color: black;
+  padding-left: 4px;
+  border-left: 1px solid black;
+  border-right: 1px solid black;
+  border-top: 1px solid black;
+  width: 200px;
+}
+body header nav .menu-horizontal li .menu-vertical .sub-menu li:hover {
+  color: white;
+}
+body header nav .menu-horizontal li .menu-vertical .sub-menu .ultimo {
+  border-bottom: 1px solid black;
 }
 body main {
   margin-top: 400px;

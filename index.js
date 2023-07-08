@@ -9,6 +9,7 @@ var filtro_todo = document.querySelector(".filtro_todo");
 var filtro_termos = document.querySelector(".filtro_termos");
 var filtro_bombillas = document.querySelector(".filtro_bombillas");
 var filtro_mates = document.querySelector(".filtro_mates");
+var filtro_yerbas = document.querySelector(".filtro_yerbas");
 var inp = document.querySelector(".input");
 var cont_productos = document.querySelector(".cont-productos");
 var loader = document.querySelector(".custom-loader");
@@ -77,33 +78,37 @@ function noENcontrado() {
 filtro_termos.addEventListener("click", () => {
 
     reset()
-    filtro('imperial', 'camionero', 'bombilla', 'torpedo')
+    filtro('imperial', 'camionero', 'bombilla', 'torpedo','yerbas')
 })
 
 filtro_torpedos.addEventListener("click", () => {
 
     reset()
-    filtro('imperial', 'camionero', 'bombilla', 'termo')
+    filtro('imperial', 'camionero', 'bombilla', 'termo','yerbas')
 })
 filtro_mates.addEventListener("click", () => {
 
     reset()
-    filtro('bombilla', 'termo')
+    filtro('bombilla', 'termo','yerbas')
 })
 filtro_todo.addEventListener("click", () => { reset() });
 
 filtro_imperial.addEventListener("click", () => {
 
     reset()
-    filtro('torpedo', 'camionero', 'bombilla', 'termo')
+    filtro('torpedo', 'camionero', 'bombilla', 'termo','yerbas')
 })
 
 filtro_bombillas.addEventListener("click", () => {
 
     reset()
-    filtro('imperial', 'camionero', 'torpedo', 'termo')
+    filtro('imperial', 'camionero', 'torpedo', 'termo','yerbas')
 })
+filtro_yerbas.addEventListener("click", () => {
 
+    reset()
+    filtro('imperial', 'camionero', 'torpedo', 'termo','bombilla')
+})
 
 
 
