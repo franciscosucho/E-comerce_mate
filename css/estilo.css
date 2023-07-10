@@ -27,6 +27,7 @@ body header {
   transition: height ease-in-out 0.5s;
 }
 body header .cont-header {
+  padding-left: 80px;
   background-color: rgb(216, 190, 160);
   display: flex;
   justify-content: space-around;
@@ -38,6 +39,22 @@ body header .cont-header .cont-regis {
   justify-content: center;
   align-items: center;
   gap: 10px;
+}
+body header .cont-header .cont-regis .compra {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  height: 40px;
+  width: 100px;
+}
+body header .cont-header .cont-regis .compra p {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.9em;
+}
+body header .cont-header .cont-regis .compra .material-symbols-outlined {
+  font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 48;
 }
 body header .cont-header .cont-regis a {
   text-decoration: none;
@@ -80,7 +97,7 @@ body header .cont-header .material-symbols-outlined {
 }
 body header img {
   padding-top: 10px;
-  height: 200px;
+  height: 22vh;
   width: 200px;
   border-radius: 50%;
   transition: transform ease-in-out 0.3s;
@@ -190,6 +207,8 @@ body main {
   gap: 40px;
 }
 body main h1 {
+  max-width: 600px;
+  font-size: 2em;
   color: rgb(221, 194, 123);
   font-family: "Bonny", serif;
 }
@@ -216,7 +235,7 @@ body main .filtro {
   align-items: flex-start;
   left: 2%;
   top: 50%;
-  height: 30%;
+  min-height: 30vh;
 }
 body main .filtro h3 {
   color: rgb(197, 172, 109);
@@ -224,7 +243,7 @@ body main .filtro h3 {
 body main .filtro ul {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 2vh;
   list-style: none;
   color: rgb(221, 194, 123);
 }
@@ -265,15 +284,34 @@ body main .cont-productos {
 body main .cont-productos #load {
   display: none;
 }
+body main .cont-productos #no_encontrado {
+  width: 60vw;
+  font-weight: bolder;
+  font-size: 3em;
+  text-align: center;
+  color: rgb(221, 194, 123);
+  border: 1px solid white;
+}
 body main .cont-productos .articulo {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  width: 500px;
-  height: 600px;
+  width: 25vw;
+  height: 63vh;
   border-radius: 10px;
   gap: 10px;
+}
+body main .cont-productos .articulo .agregar {
+  cursor: pointer;
+  display: none;
+  background-color: rgba(0, 0, 0, 0.486);
+  color: rgba(255, 255, 255, 0.486);
+  position: absolute;
+  height: 60px;
+  width: 60px;
+  border-radius: 10px;
+  font-size: 3em;
 }
 body main .cont-productos .articulo:hover {
   background-color: rgba(12, 12, 12, 0.2274509804);
@@ -281,10 +319,15 @@ body main .cont-productos .articulo:hover {
 body main .cont-productos .articulo:hover p {
   color: rgb(211, 184, 117);
 }
+body main .cont-productos .articulo:hover .agregar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 body main .cont-productos .articulo img {
   border: 1px solid black;
-  width: 400px;
-  height: 500px;
+  width: 22vw;
+  height: 50vh;
   border-radius: 10px;
 }
 body main .cont-productos .articulo p {

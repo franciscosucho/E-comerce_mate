@@ -1,9 +1,10 @@
 
-var cantidadpixeles = 10;
 
-var filtro_termos = this.document.querySelectorAll(".filtro_termos");
+//declarion de variables.
+var cantidadpixeles = 10;
+var filtro_termos = document.querySelectorAll(".filtro_termos");
 var filtro_imperial = document.querySelector(".filtro_imperial");
-var filtro_bombillas = this.document.querySelectorAll(".filtro_bombillas");
+var filtro_bombillas = document.querySelectorAll(".filtro_bombillas");
 var filtro_torpedos = document.querySelector(".filtro_torpedos");
 var filtro_todo = document.querySelector(".filtro_todo");
 var filtro_termos = document.querySelector(".filtro_termos");
@@ -13,6 +14,21 @@ var filtro_yerbas = document.querySelector(".filtro_yerbas");
 var inp = document.querySelector(".input");
 var cont_productos = document.querySelector(".cont-productos");
 var loader = document.querySelector(".custom-loader");
+var agregar = document.querySelectorAll(".agregar");
+var carrito = document.getElementById("carrito");
+var contador=0;
+//parte de compra de los productos.
+
+
+agregar.forEach((elemento) => {
+
+    elemento.addEventListener('click', () => {
+       
+        contador++;
+        carrito.textContent = contador;
+    });
+   
+});
 
 
 window.addEventListener('scroll', function () {
@@ -58,6 +74,9 @@ document.addEventListener('keyup', e => {
         if (!productosEncontrados) {
             no_encontrado.remove();
             noENcontrado()
+            setTimeout(function () {
+                no_encontrado.remove();
+            }, 3000);
 
         }
     }
@@ -66,10 +85,9 @@ document.addEventListener('keyup', e => {
 
 var no_encontrado = document.createElement('h3');
 function noENcontrado() {
-    
+
     no_encontrado.setAttribute('id', 'no_encontrado');
-    no_encontrado.style.backgroundColor = 'red';
-    no_encontrado.style.textAlign="center"
+    no_encontrado.style.textAlign = "center"
     no_encontrado.textContent = 'No se encontró ese producto.';
     cont_productos.appendChild(no_encontrado);
 }
@@ -78,36 +96,36 @@ function noENcontrado() {
 filtro_termos.addEventListener("click", () => {
 
     reset()
-    filtro('imperial', 'camionero', 'bombilla', 'torpedo','yerbas')
+    filtro('imperial', 'camionero', 'bombilla', 'torpedo', 'yerbas')
 })
 
 filtro_torpedos.addEventListener("click", () => {
 
     reset()
-    filtro('imperial', 'camionero', 'bombilla', 'termo','yerbas')
+    filtro('imperial', 'camionero', 'bombilla', 'termo', 'yerbas')
 })
 filtro_mates.addEventListener("click", () => {
 
     reset()
-    filtro('bombilla', 'termo','yerbas')
+    filtro('bombilla', 'termo', 'yerbas')
 })
 filtro_todo.addEventListener("click", () => { reset() });
 
 filtro_imperial.addEventListener("click", () => {
 
     reset()
-    filtro('torpedo', 'camionero', 'bombilla', 'termo','yerbas')
+    filtro('torpedo', 'camionero', 'bombilla', 'termo', 'yerbas')
 })
 
 filtro_bombillas.addEventListener("click", () => {
 
     reset()
-    filtro('imperial', 'camionero', 'torpedo', 'termo','yerbas')
+    filtro('imperial', 'camionero', 'torpedo', 'termo', 'yerbas')
 })
 filtro_yerbas.addEventListener("click", () => {
 
     reset()
-    filtro('imperial', 'camionero', 'torpedo', 'termo','bombilla')
+    filtro('imperial', 'camionero', 'torpedo', 'termo', 'bombilla')
 })
 
 
@@ -145,11 +163,11 @@ function restore(...elementos) {
     });
 }
 function animacion() {
-    loader.style.display="flex"
+    loader.style.display = "flex"
     cont_productos.style.display = "none";
     // Esperar 1 segundo (1000 milisegundos)
     setTimeout(function () {
-        loader.style.display="none"
+        loader.style.display = "none"
         // Ocultar la animación de carga después de 1 segundo
         cont_productos.style.display = "grid";
     }, 1000);
