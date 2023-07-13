@@ -84,7 +84,7 @@ body header .cont-header .cont-input input {
   color: rgb(54, 36, 23);
   font-size: 1em;
   border: none;
-  width: 6em;
+  width: 11em;
   background-color: rgba(245, 245, 220, 0);
 }
 body header .cont-header .cont-input input:focus {
@@ -97,7 +97,7 @@ body header .cont-header .material-symbols-outlined {
 }
 body header img {
   padding-top: 10px;
-  height: 22vh;
+  height: 20vh;
   width: 200px;
   border-radius: 50%;
   transition: transform ease-in-out 0.3s;
@@ -396,10 +396,36 @@ body main .cont-productos .articulo p {
 body main .cont-productos .articulo.filtro {
   display: none;
 }
-body footer {
-  height: 10em;
+body main footer {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 15em;
   width: 100vw;
   background-color: #d8bea0;
+}
+body main footer .div-contacto {
+  background-color: #81531d;
+  display: flex;
+  height: 100%;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+  gap: 5px;
+}
+body main footer .div-contacto h3 {
+  font-weight: bolder;
+  font-size: 2em;
+}
+body main footer .div-contacto h4 {
+  font-size: 1.5em;
+}
+body main footer .div-contacto a {
+  text-decoration: none;
+}
+body main footer .div-contacto a svg {
+  height: 2em;
+  width: 2em;
 }
 
 @media (max-width: 1000px) {
