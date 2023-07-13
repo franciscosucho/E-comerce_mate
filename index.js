@@ -28,6 +28,7 @@ var filtro_text = document.querySelector(".filtro")
 
 nav_producto.addEventListener('click', () => {
     slider.style.display="none";
+    filtro_text.style.top="50%";
 })
 
 

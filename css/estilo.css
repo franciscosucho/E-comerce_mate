@@ -84,7 +84,7 @@ body header .cont-header .cont-input input {
   color: rgb(54, 36, 23);
   font-size: 1em;
   border: none;
-  width: 150px;
+  width: 6em;
   background-color: rgba(245, 245, 220, 0);
 }
 body header .cont-header .cont-input input:focus {
@@ -285,14 +285,15 @@ body main .filtro {
   gap: 20px;
   justify-content: flex-start;
   align-items: flex-start;
-  left: 2%;
-  top: 105%;
+  left: 0.5%;
+  top: 110%;
   min-height: 30vh;
 }
 body main .filtro.active {
   top: 50%;
 }
 body main .filtro h3 {
+  font-size: 1.2em;
   color: rgb(197, 172, 109);
 }
 body main .filtro ul {
@@ -321,9 +322,10 @@ body main .filtro ul li:hover {
   }
 }
 body main .cont-productos {
-  padding-top: 0px;
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  justify-content: center;
+  align-content: center;
+  grid-template-columns: repeat(3, 1fr);
   padding-left: 50px;
   width: 70%;
 }
@@ -369,6 +371,7 @@ body main .cont-productos .articulo:hover .agregar {
   justify-content: center;
 }
 body main .cont-productos .articulo .agregar {
+  z-index: 1000;
   cursor: pointer;
   display: none;
   background-color: rgba(0, 0, 0, 0.486);
@@ -393,17 +396,95 @@ body main .cont-productos .articulo p {
 body main .cont-productos .articulo.filtro {
   display: none;
 }
+body footer {
+  height: 10em;
+  width: 100vw;
+  background-color: #d8bea0;
+}
 
 @media (max-width: 1000px) {
+  body header .cont-header .cont-regis {
+    display: flex;
+    flex-direction: column;
+  }
+  body header .cont-header .cont-regis p {
+    display: none;
+  }
+  body header .cont-header .cont-regis .compra {
+    justify-content: center;
+  }
   body main h1 {
-    margin-left: 50px;
     color: rgb(221, 194, 123);
     font-family: "Bonny", serif;
   }
   body main .filtro {
-    top: 60%;
+    top: 110%;
+  }
+  body main .filtro h3 {
+    font-size: 0.8em;
+    font-weight: bolder;
   }
   body main .cont-productos {
-    grid-template-columns: repeat(1, 1fr);
+    grid-template-columns: repeat(2, 1fr);
+  }
+  body main .cont-productos .articulo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 40vw;
+    height: 63vh;
+    border-radius: 10px;
+    gap: 10px;
+    transition: all 0.7s ease-in-out;
+  }
+  body main .cont-productos .articulo img {
+    border: 1px solid black;
+    width: 35vw;
+    height: 50vh;
+    border-radius: 10px;
+  }
+}
+@media (max-width: 375px) {
+  body header .cont-header .cont-regis {
+    display: flex;
+    flex-direction: column;
+  }
+  body header .cont-header .cont-regis p {
+    display: none;
+  }
+  body header .cont-header .cont-regis .compra {
+    justify-content: center;
+  }
+  body main h1 {
+    color: rgb(221, 194, 123);
+    font-family: "Bonny", serif;
+  }
+  body main .filtro {
+    top: 110%;
+  }
+  body main .filtro h3 {
+    font-size: 0.8em;
+    font-weight: bolder;
+  }
+  body main .cont-productos {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  body main .cont-productos .articulo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 40vw;
+    height: 63vh;
+    border-radius: 10px;
+    gap: 10px;
+    transition: all 0.7s ease-in-out;
+  }
+  body main .cont-productos .articulo img {
+    border: 1px solid black;
+    width: 35vw;
+    height: 50vh;
+    border-radius: 10px;
   }
 }/*# sourceMappingURL=estilo.css.map */
