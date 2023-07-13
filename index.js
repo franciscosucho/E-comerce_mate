@@ -11,23 +11,38 @@ var filtro_termos = document.querySelector(".filtro_termos");
 var filtro_bombillas = document.querySelector(".filtro_bombillas");
 var filtro_mates = document.querySelector(".filtro_mates");
 var filtro_yerbas = document.querySelector(".filtro_yerbas");
-var inp = document.querySelector(".input");
+var inp = document.querySelector("#buscador");
 var cont_productos = document.querySelector(".cont-productos");
 var loader = document.querySelector(".custom-loader");
 var agregar = document.querySelectorAll(".agregar");
 var carrito = document.getElementById("carrito");
-var contador=0;
+var contador = 0;
+var img_prin = document.querySelector("cont-img")
+var cont_img = 1;
+var nav_producto = document.querySelector(".nav_producto")
+var slider = document.querySelector(".slider-frame");
+var filtro_text = document.querySelector(".filtro")
+
+
+
+
+nav_producto.addEventListener('click', () => {
+    slider.style.display="none";
+})
+
+
+
+
+
 //parte de compra de los productos.
-
-
 agregar.forEach((elemento) => {
 
     elemento.addEventListener('click', () => {
-       
+
         contador++;
         carrito.textContent = contador;
     });
-   
+
 });
 
 
@@ -55,7 +70,7 @@ window.addEventListener('scroll', function () {
 
 
 
-document.addEventListener('keyup', e => {
+inp.addEventListener('keyup', e => {
     animacion();
     //esto le da un evento a todo el documento cuando se presiona una tecla
     if (e.target.matches("#buscador")) {
@@ -151,13 +166,13 @@ function modificar_tamaño(...elementos) {
 
     elementos.forEach(elemento => {
         // Aplica los cambios de estilo al elemento
-
+        elemento.style.transition = "all .5s ease-in-out";
         elemento.style.transform = 'scale(.6)';
     });
 }
 function restore(...elementos) {
     elementos.forEach(elemento => {
-
+        elemento.style.transition = "all .5s ease-in-out";
         // Aplica los cambios de estilo al elemento
         elemento.style.transform = 'scale(1)';
     });

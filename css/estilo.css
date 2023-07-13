@@ -204,11 +204,63 @@ body main {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  gap: 40px;
+}
+body main .slider-frame {
+  transition: all 1s ease-in-out;
+  width: 60vw;
+  height: auto;
+  margin: 50px auto 0;
+  overflow: hidden;
+}
+body main .slider-frame.active {
+  display: none;
+}
+body main .slider-frame ul {
+  display: flex;
+  padding: 0;
+  width: 400%;
+  animation: slide 20s infinite alternate ease-in-out;
+}
+body main .slider-frame li {
+  width: 100%;
+  list-style: none;
+}
+body main .slider-frame img {
+  width: 100%;
+  height: 500px;
+  border-radius: 20px;
+}
+@keyframes slide {
+  0% {
+    margin-left: 0;
+  }
+  20% {
+    margin-left: 0;
+  }
+  25% {
+    margin-left: -100%;
+  }
+  45% {
+    margin-left: -100%;
+  }
+  50% {
+    margin-left: -200%;
+  }
+  70% {
+    margin-left: -200%;
+  }
+  75% {
+    margin-left: -300%;
+  }
+  100% {
+    margin-left: -300%;
+  }
 }
 body main h1 {
-  max-width: 600px;
-  font-size: 2em;
+  margin-top: -60px;
+  text-align: center;
+  width: 100%;
+  font-size: 3em;
   color: rgb(221, 194, 123);
   font-family: "Bonny", serif;
 }
@@ -227,15 +279,18 @@ body main .filtro {
   border-radius: 20px;
   border: 1px solid rgb(231, 235, 197);
   padding: 10px;
-  position: fixed;
+  position: absolute;
   display: flex;
   flex-direction: column;
   gap: 20px;
   justify-content: flex-start;
   align-items: flex-start;
   left: 2%;
-  top: 50%;
+  top: 105%;
   min-height: 30vh;
+}
+body main .filtro.active {
+  top: 50%;
 }
 body main .filtro h3 {
   color: rgb(197, 172, 109);
@@ -270,7 +325,6 @@ body main .cont-productos {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   padding-left: 50px;
-  gap: 10px;
   width: 70%;
 }
 @keyframes spin {
@@ -301,6 +355,18 @@ body main .cont-productos .articulo {
   height: 63vh;
   border-radius: 10px;
   gap: 10px;
+  transition: all 0.7s ease-in-out;
+}
+body main .cont-productos .articulo:hover p {
+  color: rgb(211, 184, 117);
+}
+body main .cont-productos .articulo:hover img {
+  filter: brightness(50%);
+}
+body main .cont-productos .articulo:hover .agregar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 body main .cont-productos .articulo .agregar {
   cursor: pointer;
@@ -312,17 +378,6 @@ body main .cont-productos .articulo .agregar {
   width: 60px;
   border-radius: 10px;
   font-size: 3em;
-}
-body main .cont-productos .articulo:hover {
-  background-color: rgba(12, 12, 12, 0.2274509804);
-}
-body main .cont-productos .articulo:hover p {
-  color: rgb(211, 184, 117);
-}
-body main .cont-productos .articulo:hover .agregar {
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
 body main .cont-productos .articulo img {
   border: 1px solid black;

@@ -32,9 +32,9 @@ body {
             display: flex;
             justify-content: space-around;
             align-items: center;
-            width: 100%;    
+            width: 100%;
 
-            
+
 
             .cont-regis {
 
@@ -42,18 +42,21 @@ body {
                 justify-content: center;
                 align-items: center;
                 gap: 10px;
+
                 .compra {
                     display: flex;
                     align-items: center;
-                    justify-content: flex-start;        
+                    justify-content: flex-start;
                     height: 40px;
                     width: 100px;
-                    p{
+
+                    p {
                         display: flex;
                         align-items: center;
                         justify-content: center;
                         font-size: .9em;
                     }
+
                     .material-symbols-outlined {
                         font-variation-settings:
                             'FILL' 0,
@@ -255,11 +258,77 @@ body {
         justify-content: center;
         align-items: center;
         flex-direction: column;
-        gap: 40px;
+
+        .slider-frame {
+            transition: all 1s ease-in-out;
+            width: 60vw;
+            height: auto;
+            margin: 50px auto 0;
+            overflow: hidden;
+
+            &.active {
+                display: none;
+            }
+        }
+
+        .slider-frame ul {
+            display: flex;
+            padding: 0;
+            width: 400%;
+
+            animation: slide 20s infinite alternate ease-in-out;
+        }
+
+        .slider-frame li {
+            width: 100%;
+            list-style: none;
+        }
+
+        .slider-frame img {
+            width: 100%;
+            height: 500px;
+            border-radius: 20px;
+        }
+
+        @keyframes slide {
+            0% {
+                margin-left: 0;
+            }
+
+            20% {
+                margin-left: 0;
+            }
+
+            25% {
+                margin-left: -100%;
+            }
+
+            45% {
+                margin-left: -100%;
+            }
+
+            50% {
+                margin-left: -200%;
+            }
+
+            70% {
+                margin-left: -200%;
+            }
+
+            75% {
+                margin-left: -300%;
+            }
+
+            100% {
+                margin-left: -300%;
+            }
+        }
 
         h1 {
-            max-width:600px ;
-            font-size: 2em;
+            margin-top: -60px;
+            text-align: center;
+            width: 100%;
+            font-size: 3em;
             color: rgb(221, 194, 123);
             font-family: 'Bonny', serif;
         }
@@ -280,15 +349,19 @@ body {
             border-radius: 20px;
             border: 1px solid rgb(231, 235, 197);
             padding: 10px;
-            position: fixed;
+            position: absolute;
             display: flex;
             flex-direction: column;
             gap: 20px;
             justify-content: flex-start;
             align-items: flex-start;
             left: 2%;
-            top: 50%;
+            top: 105%;
             min-height: 30vh;
+
+            &.active {
+                top: 50%;
+            }
 
             h3 {
                 color: rgb(197, 172, 109);
@@ -345,7 +418,7 @@ body {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
             padding-left: 50px;
-            gap: 10px;
+            
             width: 70%;
 
             #load {
@@ -371,6 +444,24 @@ body {
                 height: 63vh;
                 border-radius: 10px;
                 gap: 10px;
+                transition: all 0.7s ease-in-out;
+
+                &:hover {
+
+                    p {
+                        color: rgb(211, 184, 117);
+                    }
+
+                    img {
+                        filter: brightness(50%);
+                    }
+
+                    .agregar {
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                    }
+                }
 
                 .agregar {
                     cursor: pointer;
@@ -382,25 +473,10 @@ body {
                     width: 60px;
                     border-radius: 10px;
                     font-size: 3em;
-                }
-
-                &:hover {
-
-                    background-color: #0c0c0c3a;
-
-                    p {
-                        color: rgb(211, 184, 117);
-                    }
-
-
-
-                    .agregar {
-                        display: flex;
-                        align-items: center;
-                        justify-content: center;
-                    }
 
                 }
+
+
 
                 img {
                     border: 1px solid black;
