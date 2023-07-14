@@ -22,9 +22,34 @@ var cont_img = 1;
 var nav_producto = document.querySelector(".nav_producto")
 var slider = document.querySelector(".slider-frame");
 var filtro_text = document.querySelector(".filtro")
+var footer =  document.querySelector(".footer")
+var carrito_total;
+var cont_compra=document.querySelector(".compra");
+var lista_de_compra=document.querySelector(".lista-de-compra")
+
+//parte de compra de los productos.
+//----------------------------------------------------------------
+cont_compra.addEventListener('click',()=>{
+   lista_de_compra.classList.toggle("active")
 
 
+})
 
+agregar.forEach((elemento) => {
+
+    elemento.addEventListener('click', () => {
+
+        contador++;
+        carrito.textContent = contador;
+        var producto_lista=document.createElement("li");
+        producto_lista.classList.add("producto-lista");
+        producto_lista.textContent="mate liso";
+        lista_de_compra.appendChild(producto_lista);
+    });
+
+});
+//----------------------------------------------------------------
+//parte de estilo
 
 nav_producto.addEventListener('click', () => {
     slider.style.display="none";
@@ -35,16 +60,7 @@ nav_producto.addEventListener('click', () => {
 
 
 
-//parte de compra de los productos.
-agregar.forEach((elemento) => {
 
-    elemento.addEventListener('click', () => {
-
-        contador++;
-        carrito.textContent = contador;
-    });
-
-});
 
 
 window.addEventListener('scroll', function () {
@@ -101,7 +117,7 @@ inp.addEventListener('keyup', e => {
 
 var no_encontrado = document.createElement('h3');
 function noENcontrado() {
-
+    footer.style.display = "none";
     no_encontrado.setAttribute('id', 'no_encontrado');
     no_encontrado.style.textAlign = "center"
     no_encontrado.textContent = 'No se encontró ese producto.';
@@ -155,6 +171,7 @@ function filtro(...clases) {
     });
 }
 function reset() {
+    
     animacion();
     let productos = document.querySelectorAll(".articulo");
     productos.forEach(producto => {
@@ -180,9 +197,11 @@ function restore(...elementos) {
 }
 function animacion() {
     loader.style.display = "flex"
+    footer.style.display = "none";
     cont_productos.style.display = "none";
     // Esperar 1 segundo (1000 milisegundos)
     setTimeout(function () {
+        footer.style.display = "flex";
         loader.style.display = "none"
         // Ocultar la animación de carga después de 1 segundo
         cont_productos.style.display = "grid";
