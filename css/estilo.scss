@@ -27,88 +27,105 @@ body {
         transition: height ease-in-out .5s;
 
         .cont-header {
-            padding-right: 70px;
             background-color: rgb(216, 190, 160);
             display: flex;
             justify-content: space-around;
             align-items: center;
             width: 100%;
 
-
-
-            .cont-regis {
-
+            .compra {
+                padding-top: 10px;
                 display: flex;
-                justify-content: center;
                 align-items: center;
-                gap: 10px;
+                flex-direction: column;
+                justify-content: flex-start;
+                z-index: 1000;
 
-                .compra {
+                &.active {
+
                     position: absolute;
-                    left: 86%;
+                    left: 84%;
+                    height: 100vh;
+                    width: 20em;
+                    top: 0%;
+                    background-color: rgb(124, 93, 57);
+                }
+
+                .sub-compra {
+                    display: flex;
+
+                }
+
+                p {
                     display: flex;
                     align-items: center;
-                    justify-content: flex-start;
-                    height: 40px;
-                    width: 30em;
+                    justify-content: center;
+                    font-size: .9em;
+                }
 
-                    p {
+                .material-symbols-outlined {
+                    cursor: pointer;
+                    font-variation-settings:
+                        'FILL' 0,
+                        'wght' 400,
+                        'GRAD' 0,
+                        'opsz' 48
+                }
+
+                .lista-de-compra {
+
+                    transition: display 1s ease-in-out;
+                    display: none;
+                    width: 100%;
+                    border: 1px solid black;
+                    list-style: none;
+                    flex-direction: column;
+                    background-color: rgb(124, 93, 57);
+
+                    h3 {
+                        font-size: 2em;
+                    }
+
+                    #total {
+                        color: white;
+                        font-size: 1.5em;
+                    }
+
+                    &.active {
+                        transition: display 1s ease-in-out;
                         display: flex;
-                        align-items: center;
-                        justify-content: center;
-                        font-size: .9em;
                     }
 
-                    .material-symbols-outlined {
-                        font-variation-settings:
-                            'FILL' 0,
-                            'wght' 400,
-                            'GRAD' 0,
-                            'opsz' 48
-                    }
-                    .lista-de-compra{
-                        margin-left: 5px;
-                        display: none;
-                        width: 10em;
-                        flex-direction: column;
-                        list-style: none;
-                        background-color: #81531d;
-                        &.active{
-                            display: flex;
+                    .producto_lista {
+                        font-size: 1.1em;
+                        border-top: 1px solid black;
+
+                        &:hover {
+                            background-color: #d8bea0;
                         }
                     }
                 }
-
-                a {
-                    text-decoration: none;
-                    color: rgb(54, 36, 23);
-                    transition: all .3s;
-
-                    &:hover {
-                        animation: borderAnimations 1s infinite;
-                        box-shadow: 0 1px 0 0 rgb(0, 0, 0);
+                .btn-compra{
+                    display: none;
+                    margin-top: 10px;
+                    border-radius: 20px; 
+                    border: none;
+                    color: white;
+                    height: 30px;
+                    width: 100px;
+                    background-color: rgb(66, 66, 66);
+                    transition:all .2s ease-in-out;
+                    &:hover{
+                        background-color: rgb(100, 99, 99);
                     }
-
-                    @keyframes borderAnimations {
-                        0% {
-                            box-shadow: 0 1px 0 0rgb(221, 194, 123);
-                        }
-
-                        50% {
-                            box-shadow: 0 1px 0 0 rgb(0, 0, 0);
-                        }
-
-                        100% {
-                            box-shadow: 0 1px 0 0 rgb(0, 0, 0);
-                        }
+                    &.active{
+                        display: block;
                     }
                 }
             }
 
-
             .cont-input {
                 border-bottom: 1px solid rgb(54, 36, 23);
-                ;
                 border-width: 0.5px;
 
                 input {
@@ -133,15 +150,23 @@ body {
                     'GRAD' 0,
                     'opsz' 48
             }
+
+            .img-logo {
+
+                padding-top: 10px;
+                height: 20vh;
+                width: 15vw;
+                border-radius: 50%;
+                transition: transform ease-in-out 1s;
+               
+                &.active{
+                    position: relative;
+                    left: -19.3%;
+                }
+            }
         }
 
-        img {
-            padding-top: 10px;
-            height: 20vh;
-            width: 200px;
-            border-radius: 50%;
-            transition: transform ease-in-out .3s;
-        }
+
 
         nav {
             display: flex;
@@ -169,6 +194,7 @@ body {
                     text-decoration: none;
 
                     a {
+
                         font-size: .8em;
                         font-weight: 100;
                         text-decoration: none;
@@ -368,8 +394,8 @@ body {
             gap: 20px;
             justify-content: flex-start;
             align-items: flex-start;
-            left: .5%;
-            top: 110%;
+            left: .5vw;
+            top: 50%;
             min-height: 30vh;
 
             &.active {
@@ -478,7 +504,7 @@ body {
                 }
 
                 .agregar {
-                    z-index: 1000;
+                    z-index: 10;
                     cursor: pointer;
                     display: none;
                     background-color: rgba(0, 0, 0, 0.486);
@@ -533,22 +559,26 @@ body {
                     gap: 10px;
                     list-style: none;
                     margin-top: 10px;
+
                     li {
                         cursor: pointer;
                         font-size: 1em;
                         font-weight: 300;
                         color: black;
-                        &:hover{
+
+                        &:hover {
                             box-shadow: 0 1px 0 0 rgb(0, 0, 0);
                         }
                     }
-                    
+
                 }
             }
-            .derechos{
+
+            .derechos {
                 height: 100%;
-                
+
             }
+
             .div-contacto {
                 display: flex;
                 height: 100%;
@@ -606,7 +636,7 @@ body {
 
 }
 
-@media(max-width:1000px) {
+@media(max-width:1400px) {
     body {
         header {
             .cont-header {
@@ -618,9 +648,11 @@ body {
                     display: flex;
                     flex-direction: column;
 
-                    .compra {
-                        justify-content: center;
-                    }
+
+                }
+
+                .compra {
+                    left: 60em;
                 }
             }
         }
@@ -690,6 +722,7 @@ body {
 
                     .compra {
                         justify-content: center;
+                        left: 60em;
                     }
                 }
             }

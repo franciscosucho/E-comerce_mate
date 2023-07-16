@@ -16,44 +16,94 @@ var cont_productos = document.querySelector(".cont-productos");
 var loader = document.querySelector(".custom-loader");
 var agregar = document.querySelectorAll(".agregar");
 var carrito = document.getElementById("carrito");
-var contador = 0;
 var img_prin = document.querySelector("cont-img")
-var cont_img = 1;
 var nav_producto = document.querySelector(".nav_producto")
 var slider = document.querySelector(".slider-frame");
 var filtro_text = document.querySelector(".filtro")
-var footer =  document.querySelector(".footer")
+var footer = document.querySelector(".footer");
+var cont_compra = document.querySelector(".compra");
+var lista_de_compra = document.querySelector(".lista-de-compra");
+const totalElement = document.getElementById("total");
+var cart = document.querySelector(".cart");
+var cont_registro = document.querySelector(".cont-regis");
+const img_logo = document.querySelector(".img-logo");
+const vacio = document.querySelector(".vacio")
+var btn_compra = document.querySelector(".btn-compra")
 var carrito_total;
-var cont_compra=document.querySelector(".compra");
-var lista_de_compra=document.querySelector(".lista-de-compra")
+
+var total = 0;
+var cont_img = 1;
+
 
 //parte de compra de los productos.
 //----------------------------------------------------------------
-cont_compra.addEventListener('click',()=>{
-   lista_de_compra.classList.toggle("active")
+var contador = 0;
+cart.addEventListener('click', () => {
+    lista_de_compra.classList.toggle("active");
+    cont_compra.classList.toggle("active");
+    img_logo.classList.toggle("active");
+    btn_compra.classList.toggle("active");
 
+
+    const estilo = getComputedStyle(lista_de_compra);
+
+    if (estilo.display === 'none') {
+        btn_compra.style.display = "none";
+    }
+    else {
+        if (contador != 0) {
+            btn_compra.style.display = "block";
+        }
+        else {
+            btn_compra.style.display = "none";
+        }
+    }
 
 })
-
 agregar.forEach((elemento) => {
 
     elemento.addEventListener('click', () => {
+        const productItem = event.target.parentNode;
+        const productName = productItem.querySelector('.product-name').innerText;
+        const productPrice = productItem.querySelector('.product-price').innerText;
+        const price = productPrice;
+        // Extraer solo el valor numérico del precio
+        addcarrito(productName, price)
 
-        contador++;
-        carrito.textContent = contador;
-        var producto_lista=document.createElement("li");
-        producto_lista.classList.add("producto-lista");
-        producto_lista.textContent="mate liso";
-        lista_de_compra.appendChild(producto_lista);
     });
 
 });
+
+function addcarrito(producto, precio) {
+    var producto_lista = document.createElement('li');
+    producto_lista.classList.add("producto_lista")
+    producto_lista.innerText = `${producto}-$${precio}`;
+    lista_de_compra.appendChild(producto_lista);
+
+
+    contador++;
+    
+    if (contador == 0) {
+        vacio.style.display = "block";
+
+    }
+    else {
+        vacio.style.display = "none";
+
+    }
+    carrito.textContent = contador;
+    total += parseFloat(precio);
+    totalElement.innerText = `Total: $${total.toFixed(3)}`;
+}
 //----------------------------------------------------------------
+
+
+
 //parte de estilo
 
 nav_producto.addEventListener('click', () => {
-    slider.style.display="none";
-    filtro_text.style.top="50%";
+    slider.style.display = "none";
+    filtro_text.style.top = "50%";
 })
 
 
@@ -66,7 +116,6 @@ nav_producto.addEventListener('click', () => {
 window.addEventListener('scroll', function () {
     var cont_header = this.document.querySelector(".cont-header");
     var header = document.querySelector(".header");
-    var img_logo = document.querySelector(".img-logo");
     // Obtén la posición actual del scroll en píxeles
     const scrollPosition = window.pageYOffset || document.documentElement.scrollTop;
 
@@ -171,7 +220,7 @@ function filtro(...clases) {
     });
 }
 function reset() {
-    
+
     animacion();
     let productos = document.querySelectorAll(".articulo");
     productos.forEach(producto => {
