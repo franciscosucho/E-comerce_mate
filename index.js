@@ -29,6 +29,11 @@ var cont_registro = document.querySelector(".cont-regis");
 const img_logo = document.querySelector(".img-logo");
 const vacio = document.querySelector(".vacio")
 var btn_compra = document.querySelector(".btn-compra")
+var btn_precio = document.querySelector(".btn_precio");
+var precio_desde = document.getElementById("precio_desde");
+var precio_hasta = document.getElementById("precio_hasta");
+var articulo = document.querySelectorAll(".articulo");
+var cont_input = document.querySelector(".cont-input");
 var carrito_total;
 
 var total = 0;
@@ -43,6 +48,7 @@ cart.addEventListener('click', () => {
     cont_compra.classList.toggle("active");
     img_logo.classList.toggle("active");
     btn_compra.classList.toggle("active");
+    cont_input.classList.toggle("active");
 
 
     const estilo = getComputedStyle(lista_de_compra);
@@ -82,7 +88,7 @@ function addcarrito(producto, precio) {
 
 
     contador++;
-    
+
     if (contador == 0) {
         vacio.style.display = "block";
 
@@ -100,18 +106,10 @@ function addcarrito(producto, precio) {
 
 
 //parte de estilo
-
 nav_producto.addEventListener('click', () => {
     slider.style.display = "none";
     filtro_text.style.top = "50%";
 })
-
-
-
-
-
-
-
 
 window.addEventListener('scroll', function () {
     var cont_header = this.document.querySelector(".cont-header");
@@ -133,7 +131,7 @@ window.addEventListener('scroll', function () {
         restore(img_logo);
     }
 });
-
+//----------------------------------------------------------------
 
 
 inp.addEventListener('keyup', e => {
@@ -142,7 +140,7 @@ inp.addEventListener('keyup', e => {
     if (e.target.matches("#buscador")) {
         var productosEncontrados = false;
 
-        document.querySelectorAll('.name').forEach(art => {
+        document.querySelectorAll('.product-name').forEach(art => {
             var contenedorPadre = art.parentNode;
             if (art.textContent.toLowerCase().includes(e.target.value.toLowerCase())) {
                 contenedorPadre.classList.remove('filtro');
@@ -173,7 +171,24 @@ function noENcontrado() {
     cont_productos.appendChild(no_encontrado);
 }
 
+//parte de filtros de productos
+btn_precio.addEventListener('click', () => {
 
+    articulo.forEach(art => {
+        let precio = art.querySelector('.product-price').innerText;
+        precio = precio.replace("$", "");
+        precio = precio.replace(".", "");
+        precio = parseInt(precio);
+
+        if (precio < precio_hasta.value && precio > precio_desde.value) {
+            art.style.display = "flex"
+        } else {
+            art.style.display = "none"
+        }
+    });
+    animacion()
+
+})
 filtro_termos.addEventListener("click", () => {
 
     reset()
@@ -208,9 +223,9 @@ filtro_yerbas.addEventListener("click", () => {
     reset()
     filtro('imperial', 'camionero', 'torpedo', 'termo', 'bombilla')
 })
+//----------------------------------------------------------------
 
-
-
+//funciones
 function filtro(...clases) {
     clases.forEach(clase => {
         const elementos = document.querySelectorAll('.' + clase);
@@ -256,3 +271,4 @@ function animacion() {
         cont_productos.style.display = "grid";
     }, 1000);
 }
+//----------------------------------------------------------------

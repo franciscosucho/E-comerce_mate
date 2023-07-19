@@ -105,20 +105,23 @@ body {
                         }
                     }
                 }
-                .btn-compra{
+
+                .btn-compra {
                     display: none;
                     margin-top: 10px;
-                    border-radius: 20px; 
+                    border-radius: 20px;
                     border: none;
                     color: white;
                     height: 30px;
                     width: 100px;
                     background-color: rgb(66, 66, 66);
-                    transition:all .2s ease-in-out;
-                    &:hover{
+                    transition: all .2s ease-in-out;
+
+                    &:hover {
                         background-color: rgb(100, 99, 99);
                     }
-                    &.active{
+
+                    &.active {
                         display: block;
                     }
                 }
@@ -140,6 +143,10 @@ body {
                         color: rgb(54, 36, 23);
                     }
                 }
+                &.active{
+                    position: relative;
+                    left: -5.54%;
+                }
             }
 
             .material-symbols-outlined {
@@ -155,13 +162,14 @@ body {
 
                 padding-top: 10px;
                 height: 20vh;
+                margin-right: 200px;
                 width: 15vw;
                 border-radius: 50%;
                 transition: transform ease-in-out 1s;
-               
-                &.active{
+
+                &.active {
                     position: relative;
-                    left: -19.3%;
+                    left: -16.7%;
                 }
             }
         }
@@ -396,7 +404,7 @@ body {
             align-items: flex-start;
             left: .5vw;
             top: 50%;
-            min-height: 30vh;
+            width: 20vh;
 
             &.active {
                 top: 50%;
@@ -415,6 +423,7 @@ body {
                 color: rgb(221, 194, 123);
 
                 li {
+                    width: 60%;
                     cursor: pointer;
 
                     &:hover {
@@ -434,6 +443,51 @@ body {
                         100% {
                             box-shadow: 0 1px 0 0 rgb(221, 194, 123);
                         }
+                    }
+                }
+
+                .filtro_precio {
+                    width: 100%;
+                    display: flex;
+                    flex-direction: column;
+                    gap: 5px;
+
+                    div {
+                        width: 100%;
+                        display: flex;
+                        gap: 4px;
+                        input {
+                            width: 30%;
+                            color: rgb(221, 194, 123);
+                            background-color: rgb(54, 49, 31);
+                            border: 1px solid gray;
+                            border-radius: 10px;
+                            padding: 2px;
+                            &:focus {
+                                border: 1px solid rgb(44, 44, 155);
+                                outline: none;
+                            }
+                        }
+
+                        .btn_precio {
+                            cursor: pointer;
+                            width: 30px;
+                            height: 30px;
+                            border-radius: 50%;
+                            background-color: #b8b8b842;
+                            color: rgba(255, 255, 255, 0.212);
+                            border: 1px solid rgba(0, 0, 0, 0.137);
+
+                            &:hover {
+                                background-color: #777777;
+                            }
+                        }
+
+                       
+                    }
+                    &:hover {
+                        animation: none;
+                        box-shadow: none;
                     }
                 }
             }

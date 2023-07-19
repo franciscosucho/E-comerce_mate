@@ -121,6 +121,10 @@ body header .cont-header .cont-input input:focus {
   outline: none;
   color: rgb(54, 36, 23);
 }
+body header .cont-header .cont-input.active {
+  position: relative;
+  left: -5.54%;
+}
 body header .cont-header .material-symbols-outlined {
   color: rgb(54, 36, 23);
   font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 48;
@@ -128,13 +132,14 @@ body header .cont-header .material-symbols-outlined {
 body header .cont-header .img-logo {
   padding-top: 10px;
   height: 20vh;
+  margin-right: 200px;
   width: 15vw;
   border-radius: 50%;
   transition: transform ease-in-out 1s;
 }
 body header .cont-header .img-logo.active {
   position: relative;
-  left: -19.3%;
+  left: -16.7%;
 }
 body header nav {
   display: flex;
@@ -321,7 +326,7 @@ body main .filtro {
   align-items: flex-start;
   left: 0.5vw;
   top: 50%;
-  min-height: 30vh;
+  width: 20vh;
 }
 body main .filtro.active {
   top: 50%;
@@ -338,6 +343,7 @@ body main .filtro ul {
   color: rgb(221, 194, 123);
 }
 body main .filtro ul li {
+  width: 60%;
   cursor: pointer;
 }
 body main .filtro ul li:hover {
@@ -354,6 +360,45 @@ body main .filtro ul li:hover {
   100% {
     box-shadow: 0 1px 0 0 rgb(221, 194, 123);
   }
+}
+body main .filtro ul .filtro_precio {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+body main .filtro ul .filtro_precio div {
+  width: 100%;
+  display: flex;
+  gap: 4px;
+}
+body main .filtro ul .filtro_precio div input {
+  width: 30%;
+  color: rgb(221, 194, 123);
+  background-color: rgb(54, 49, 31);
+  border: 1px solid gray;
+  border-radius: 10px;
+  padding: 2px;
+}
+body main .filtro ul .filtro_precio div input:focus {
+  border: 1px solid rgb(44, 44, 155);
+  outline: none;
+}
+body main .filtro ul .filtro_precio div .btn_precio {
+  cursor: pointer;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: rgba(184, 184, 184, 0.2588235294);
+  color: rgba(255, 255, 255, 0.212);
+  border: 1px solid rgba(0, 0, 0, 0.137);
+}
+body main .filtro ul .filtro_precio div .btn_precio:hover {
+  background-color: #777777;
+}
+body main .filtro ul .filtro_precio:hover {
+  animation: none;
+  box-shadow: none;
 }
 body main .cont-productos {
   display: grid;
