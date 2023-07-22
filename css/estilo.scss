@@ -10,10 +10,10 @@ body {
     justify-content: flex-end;
     align-items: center;
     overflow-y: scroll;
-    background-color: rgb(54, 49, 31);
+    background-color: #1D7363;
 
     header {
-        background-color: #d8bea0;
+        background-color: #1D7363;
         padding: 10px;
         height: 30vh;
         display: flex;
@@ -27,33 +27,58 @@ body {
         transition: height ease-in-out .5s;
 
         .cont-header {
-            background-color: rgb(216, 190, 160);
+            background-color: #1D7363;
             display: flex;
             justify-content: space-around;
             align-items: center;
             width: 100%;
 
             .compra {
+
+
                 padding-top: 10px;
                 display: flex;
-                align-items: center;
+                align-items: flex-start;
                 flex-direction: column;
                 justify-content: flex-start;
                 z-index: 1000;
 
                 &.active {
-
+                    overflow-y: scroll;
                     position: absolute;
-                    left: 84%;
+                    left: 60%;
                     height: 100vh;
-                    width: 20em;
+                    width: 60em;
                     top: 0%;
-                    background-color: rgb(124, 93, 57);
+                    border-left: 1px solid black;
+                    background-color: #113b34;
+                }
+
+                .cancel {
+                    transition: all .2s ease-in-out;
+                    display: none;
+                    color: rgb(175, 29, 29);
+                    padding: 5px;
+                    &.active{
+                        display: block;
+                    }
                 }
 
                 .sub-compra {
                     display: flex;
+                    .cart {
+                        color: #000000;
+                        &.active{
+                            display: none;
+                        }
+                    }
 
+                    
+                    #carrito{
+                        &.active{
+                            display: none;
+                        }
+                    }
                 }
 
                 p {
@@ -80,9 +105,11 @@ body {
                     border: 1px solid black;
                     list-style: none;
                     flex-direction: column;
-                    background-color: rgb(124, 93, 57);
+                    background-color: #113b34;
 
                     h3 {
+                        color: #070707;
+                        ;
                         font-size: 2em;
                     }
 
@@ -97,12 +124,41 @@ body {
                     }
 
                     .producto_lista {
-                        font-size: 1.1em;
+                        padding-left: 5px;
+                        display: flex;
+                        gap: 10px;
+                        align-items: center;
+                        height: 100px;
                         border-top: 1px solid black;
 
-                        &:hover {
-                            background-color: #d8bea0;
+                        .icon_delete {
+                            cursor: pointer;
+                            position: absolute;
+                            left: 50%;
+                            color: red;
                         }
+
+                        .img_producto {
+                            transition: all .2s ease-in-out;
+                            border-radius: 3px;
+                            width: 60px;
+                            height: 60px;
+
+                        }
+
+                        .text_producto {
+                            font-size: 1.4em;
+                        }
+
+                        &:hover {
+                            .img_producto {
+                                width: 80px;
+                                height: 80px;
+                            }
+
+                            background-color: #2e7a6e;
+                        }
+
                     }
                 }
 
@@ -128,11 +184,11 @@ body {
             }
 
             .cont-input {
-                border-bottom: 1px solid rgb(54, 36, 23);
+                border-bottom: 1px solid #D9C9B9;
                 border-width: 0.5px;
 
                 input {
-                    color: rgb(54, 36, 23);
+                    color: #000000;
                     font-size: 1em;
                     border: none;
                     width: 11em;
@@ -140,17 +196,18 @@ body {
 
                     &:focus {
                         outline: none;
-                        color: rgb(54, 36, 23);
+                        color: #725b5b;
                     }
                 }
-                &.active{
+
+                &.active {
                     position: relative;
                     left: -5.54%;
                 }
             }
 
             .material-symbols-outlined {
-                color: rgb(54, 36, 23);
+                color: #D9C9B9;
                 font-variation-settings:
                     'FILL' 0,
                     'wght' 400,
@@ -159,18 +216,19 @@ body {
             }
 
             .img-logo {
-
-                padding-top: 10px;
-                height: 20vh;
+                cursor: pointer;
+                height: 15vh;
                 margin-right: 200px;
                 width: 15vw;
                 border-radius: 50%;
                 transition: transform ease-in-out 1s;
+                border: 1px solid #D9C9B9;
 
                 &.active {
                     position: relative;
                     left: -16.7%;
                 }
+
             }
         }
 
@@ -183,7 +241,7 @@ body {
             width: 90%;
             height: 40px;
             margin-top: 20px;
-            background-color: rgb(107, 96, 65);
+            background-color: #D9C9B9;
             font-size: 20px;
             margin-bottom: 200px;
 
@@ -215,7 +273,7 @@ body {
                         color: white;
 
                         a {
-                            color: white;
+                            color: rgb(155, 155, 155);
                         }
 
                         .menu-vertical {
@@ -233,7 +291,7 @@ body {
                         width: 200px;
                         height: 185px;
                         border: 1px solid black;
-                        background-color: rgb(107, 96, 65);
+                        background-color: #D9C9B9;
 
                         li {
                             display: flex;
@@ -265,7 +323,7 @@ body {
                             margin-top: 41px;
                             display: none;
                             list-style: none;
-                            background-color: rgb(107, 96, 65);
+                            background-color: #D9C9B9;
 
                             li {
                                 padding-bottom: 20px;
@@ -298,7 +356,7 @@ body {
 
     main {
         margin-top: 400px;
-        background-color: rgb(54, 49, 31);
+        background-color: #1D7363;
         height: 100%;
         width: 100vw;
         display: flex;
@@ -456,6 +514,7 @@ body {
                         width: 100%;
                         display: flex;
                         gap: 4px;
+
                         input {
                             width: 30%;
                             color: rgb(221, 194, 123);
@@ -463,6 +522,7 @@ body {
                             border: 1px solid gray;
                             border-radius: 10px;
                             padding: 2px;
+
                             &:focus {
                                 border: 1px solid rgb(44, 44, 155);
                                 outline: none;
@@ -483,8 +543,9 @@ body {
                             }
                         }
 
-                       
+
                     }
+
                     &:hover {
                         animation: none;
                         box-shadow: none;
@@ -602,7 +663,7 @@ body {
             align-items: center;
             height: 15em;
             width: 100vw;
-            background-color: #d8bea0;
+            background-color: #D9C9B9;
 
             .navegacion {
                 height: 100%;

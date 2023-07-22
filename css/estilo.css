@@ -10,10 +10,10 @@ body {
   justify-content: flex-end;
   align-items: center;
   overflow-y: scroll;
-  background-color: rgb(54, 49, 31);
+  background-color: #1D7363;
 }
 body header {
-  background-color: #d8bea0;
+  background-color: #1D7363;
   padding: 10px;
   height: 30vh;
   display: flex;
@@ -27,7 +27,7 @@ body header {
   transition: height ease-in-out 0.5s;
 }
 body header .cont-header {
-  background-color: rgb(216, 190, 160);
+  background-color: #1D7363;
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -36,21 +36,41 @@ body header .cont-header {
 body header .cont-header .compra {
   padding-top: 10px;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   flex-direction: column;
   justify-content: flex-start;
   z-index: 1000;
 }
 body header .cont-header .compra.active {
+  overflow-y: scroll;
   position: absolute;
-  left: 84%;
+  left: 60%;
   height: 100vh;
-  width: 20em;
+  width: 60em;
   top: 0%;
-  background-color: rgb(124, 93, 57);
+  border-left: 1px solid black;
+  background-color: #113b34;
+}
+body header .cont-header .compra .cancel {
+  transition: all 0.2s ease-in-out;
+  display: none;
+  color: rgb(175, 29, 29);
+  padding: 5px;
+}
+body header .cont-header .compra .cancel.active {
+  display: block;
 }
 body header .cont-header .compra .sub-compra {
   display: flex;
+}
+body header .cont-header .compra .sub-compra .cart {
+  color: #000000;
+}
+body header .cont-header .compra .sub-compra .cart.active {
+  display: none;
+}
+body header .cont-header .compra .sub-compra #carrito.active {
+  display: none;
 }
 body header .cont-header .compra p {
   display: flex;
@@ -69,9 +89,10 @@ body header .cont-header .compra .lista-de-compra {
   border: 1px solid black;
   list-style: none;
   flex-direction: column;
-  background-color: rgb(124, 93, 57);
+  background-color: #113b34;
 }
 body header .cont-header .compra .lista-de-compra h3 {
+  color: #070707;
   font-size: 2em;
 }
 body header .cont-header .compra .lista-de-compra #total {
@@ -83,11 +104,34 @@ body header .cont-header .compra .lista-de-compra.active {
   display: flex;
 }
 body header .cont-header .compra .lista-de-compra .producto_lista {
-  font-size: 1.1em;
+  padding-left: 5px;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  height: 100px;
   border-top: 1px solid black;
 }
+body header .cont-header .compra .lista-de-compra .producto_lista .icon_delete {
+  cursor: pointer;
+  position: absolute;
+  left: 50%;
+  color: red;
+}
+body header .cont-header .compra .lista-de-compra .producto_lista .img_producto {
+  transition: all 0.2s ease-in-out;
+  border-radius: 3px;
+  width: 60px;
+  height: 60px;
+}
+body header .cont-header .compra .lista-de-compra .producto_lista .text_producto {
+  font-size: 1.4em;
+}
 body header .cont-header .compra .lista-de-compra .producto_lista:hover {
-  background-color: #d8bea0;
+  background-color: #2e7a6e;
+}
+body header .cont-header .compra .lista-de-compra .producto_lista:hover .img_producto {
+  width: 80px;
+  height: 80px;
 }
 body header .cont-header .compra .btn-compra {
   display: none;
@@ -107,11 +151,11 @@ body header .cont-header .compra .btn-compra.active {
   display: block;
 }
 body header .cont-header .cont-input {
-  border-bottom: 1px solid rgb(54, 36, 23);
+  border-bottom: 1px solid #D9C9B9;
   border-width: 0.5px;
 }
 body header .cont-header .cont-input input {
-  color: rgb(54, 36, 23);
+  color: #000000;
   font-size: 1em;
   border: none;
   width: 11em;
@@ -119,23 +163,24 @@ body header .cont-header .cont-input input {
 }
 body header .cont-header .cont-input input:focus {
   outline: none;
-  color: rgb(54, 36, 23);
+  color: #725b5b;
 }
 body header .cont-header .cont-input.active {
   position: relative;
   left: -5.54%;
 }
 body header .cont-header .material-symbols-outlined {
-  color: rgb(54, 36, 23);
+  color: #D9C9B9;
   font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 48;
 }
 body header .cont-header .img-logo {
-  padding-top: 10px;
-  height: 20vh;
+  cursor: pointer;
+  height: 15vh;
   margin-right: 200px;
   width: 15vw;
   border-radius: 50%;
   transition: transform ease-in-out 1s;
+  border: 1px solid #D9C9B9;
 }
 body header .cont-header .img-logo.active {
   position: relative;
@@ -148,7 +193,7 @@ body header nav {
   width: 90%;
   height: 40px;
   margin-top: 20px;
-  background-color: rgb(107, 96, 65);
+  background-color: #D9C9B9;
   font-size: 20px;
   margin-bottom: 200px;
 }
@@ -175,7 +220,7 @@ body header nav .menu-horizontal li:hover {
   color: white;
 }
 body header nav .menu-horizontal li:hover a {
-  color: white;
+  color: rgb(155, 155, 155);
 }
 body header nav .menu-horizontal li:hover .menu-vertical {
   display: block;
@@ -189,7 +234,7 @@ body header nav .menu-horizontal li .menu-vertical {
   width: 200px;
   height: 185px;
   border: 1px solid black;
-  background-color: rgb(107, 96, 65);
+  background-color: #D9C9B9;
 }
 body header nav .menu-horizontal li .menu-vertical li {
   display: flex;
@@ -215,7 +260,7 @@ body header nav .menu-horizontal li .menu-vertical .sub-menu {
   margin-top: 41px;
   display: none;
   list-style: none;
-  background-color: rgb(107, 96, 65);
+  background-color: #D9C9B9;
 }
 body header nav .menu-horizontal li .menu-vertical .sub-menu li {
   padding-bottom: 20px;
@@ -236,7 +281,7 @@ body header nav .menu-horizontal li .menu-vertical .sub-menu .ultimo {
 }
 body main {
   margin-top: 400px;
-  background-color: rgb(54, 49, 31);
+  background-color: #1D7363;
   height: 100%;
   width: 100vw;
   display: flex;
@@ -483,7 +528,7 @@ body main footer {
   align-items: center;
   height: 15em;
   width: 100vw;
-  background-color: #d8bea0;
+  background-color: #D9C9B9;
 }
 body main footer .navegacion {
   height: 100%;

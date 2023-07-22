@@ -35,36 +35,16 @@ var precio_hasta = document.getElementById("precio_hasta");
 var articulo = document.querySelectorAll(".articulo");
 var cont_input = document.querySelector(".cont-input");
 var carrito_total;
-
+const cancel = document.querySelector(".cancel");
 var total = 0;
 var cont_img = 1;
-
+var icon = document.querySelector(".icon_delete");
 
 //parte de compra de los productos.
 //----------------------------------------------------------------
 var contador = 0;
 cart.addEventListener('click', () => {
-    lista_de_compra.classList.toggle("active");
-    cont_compra.classList.toggle("active");
-    img_logo.classList.toggle("active");
-    btn_compra.classList.toggle("active");
-    cont_input.classList.toggle("active");
-
-
-    const estilo = getComputedStyle(lista_de_compra);
-
-    if (estilo.display === 'none') {
-        btn_compra.style.display = "none";
-    }
-    else {
-        if (contador != 0) {
-            btn_compra.style.display = "block";
-        }
-        else {
-            btn_compra.style.display = "none";
-        }
-    }
-
+    activar()
 })
 agregar.forEach((elemento) => {
 
@@ -72,18 +52,33 @@ agregar.forEach((elemento) => {
         const productItem = event.target.parentNode;
         const productName = productItem.querySelector('.product-name').innerText;
         const productPrice = productItem.querySelector('.product-price').innerText;
+        const productimg = productItem.querySelector('img');
         const price = productPrice;
         // Extraer solo el valor numérico del precio
-        addcarrito(productName, price)
+        addcarrito(productName, price, productimg)
 
     });
 
 });
 
-function addcarrito(producto, precio) {
+function addcarrito(producto, precio, img) {
     var producto_lista = document.createElement('li');
-    producto_lista.classList.add("producto_lista")
-    producto_lista.innerText = `${producto}-$${precio}`;
+    producto_lista.classList.add("producto_lista");
+    var text_producto = document.createElement('p');
+
+    text_producto.innerText = `${producto}-$${precio}`;
+    text_producto.classList.add('text_producto');
+
+    var img_producto = document.createElement('img');
+    img_producto.src = img.src
+    img_producto.classList.add('img_producto');
+
+    var icon_delete = document.createElement('img')
+    icon_delete.classList.add("icon_delete")
+    icon_delete.src = '/img/trash.png';
+    producto_lista.appendChild(img_producto);
+    producto_lista.appendChild(icon_delete);
+    producto_lista.appendChild(text_producto);
     lista_de_compra.appendChild(producto_lista);
 
 
@@ -101,6 +96,10 @@ function addcarrito(producto, precio) {
     total += parseFloat(precio);
     totalElement.innerText = `Total: $${total.toFixed(3)}`;
 }
+
+cancel.addEventListener("click", () => {
+    activar();
+})
 //----------------------------------------------------------------
 
 
@@ -226,6 +225,37 @@ filtro_yerbas.addEventListener("click", () => {
 //----------------------------------------------------------------
 
 //funciones
+
+function activar() {
+    carrito.classList.toggle("active");
+    lista_de_compra.classList.toggle("active");
+    cont_compra.classList.toggle("active");
+    img_logo.classList.toggle("active");
+    btn_compra.classList.toggle("active");
+    cont_input.classList.toggle("active");
+    cancel.classList.toggle("active");
+    cart.classList.toggle("active");
+
+
+    const estilo = getComputedStyle(lista_de_compra);
+
+    if (estilo.display === 'none') {
+        btn_compra.style.display = "none";
+    }
+    else {
+        if (contador != 0) {
+            btn_compra.style.display = "block";
+        }
+        else {
+            btn_compra.style.display = "none";
+        }
+    }
+
+
+}
+
+
+
 function filtro(...clases) {
     clases.forEach(clase => {
         const elementos = document.querySelectorAll('.' + clase);
