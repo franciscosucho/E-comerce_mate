@@ -10,10 +10,10 @@ body {
     justify-content: flex-end;
     align-items: center;
     overflow-y: scroll;
-    background-color: #1D7363;
+    background-color: #3d3d3d;
 
     header {
-        background-color: #1D7363;
+        background-color: #808080;
         padding: 10px;
         height: 30vh;
         display: flex;
@@ -27,7 +27,7 @@ body {
         transition: height ease-in-out .5s;
 
         .cont-header {
-            background-color: #1D7363;
+            background-color: #808080;
             display: flex;
             justify-content: space-around;
             align-items: center;
@@ -51,7 +51,7 @@ body {
                     width: 60em;
                     top: 0%;
                     border-left: 1px solid black;
-                    background-color: #113b34;
+                    background-color: #6a6a69;
                 }
 
                 .cancel {
@@ -105,7 +105,7 @@ body {
                     border: 1px solid black;
                     list-style: none;
                     flex-direction: column;
-                    background-color: #113b34;
+                    background-color: #6a6a69;
 
                     h3 {
                         color: #070707;
@@ -356,7 +356,7 @@ body {
 
     main {
         margin-top: 400px;
-        background-color: #1D7363;
+        background-color: #3d3d3d;
         height: 100%;
         width: 100vw;
         display: flex;
@@ -434,7 +434,7 @@ body {
             text-align: center;
             width: 100%;
             font-size: 3em;
-            color: rgb(221, 194, 123);
+            color: #bba9a9;
             font-family: 'Bonny', serif;
         }
 
@@ -644,7 +644,7 @@ body {
 
                 p {
                     transition: all .2s ease-in-out;
-                    color: rgb(117, 103, 65);
+                    color: rgb(134, 115, 62);
                     font-size: 1.4em;
 
                 }

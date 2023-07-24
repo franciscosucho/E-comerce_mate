@@ -38,14 +38,20 @@ var carrito_total;
 const cancel = document.querySelector(".cancel");
 var total = 0;
 var cont_img = 1;
-var icon = document.querySelector(".icon_delete");
+var contador = 0;
+
 
 //parte de compra de los productos.
 //----------------------------------------------------------------
-var contador = 0;
+
 cart.addEventListener('click', () => {
+
     activar()
 })
+
+
+
+
 agregar.forEach((elemento) => {
 
     elemento.addEventListener('click', () => {
@@ -60,8 +66,8 @@ agregar.forEach((elemento) => {
     });
 
 });
-
 function addcarrito(producto, precio, img) {
+
     var producto_lista = document.createElement('li');
     producto_lista.classList.add("producto_lista");
     var text_producto = document.createElement('p');
@@ -75,6 +81,9 @@ function addcarrito(producto, precio, img) {
 
     var icon_delete = document.createElement('img')
     icon_delete.classList.add("icon_delete")
+    //crea un evento a cada objeto.
+    icon_delete.addEventListener('click', actualizar_contador);
+
     icon_delete.src = '/img/trash.png';
     producto_lista.appendChild(img_producto);
     producto_lista.appendChild(icon_delete);
@@ -104,7 +113,7 @@ cancel.addEventListener("click", () => {
 
 
 
-//parte de estilo
+//parte de estilo.
 nav_producto.addEventListener('click', () => {
     slider.style.display = "none";
     filtro_text.style.top = "50%";
@@ -113,12 +122,12 @@ nav_producto.addEventListener('click', () => {
 window.addEventListener('scroll', function () {
     var cont_header = this.document.querySelector(".cont-header");
     var header = document.querySelector(".header");
-    // Obtén la posición actual del scroll en píxeles
+    // Obtén la posición actual del scroll en píxeles.
     const scrollPosition = window.pageYOffset || document.documentElement.scrollTop;
 
-    // Verifica si la posición del scroll alcanza la cantidad deseada
+    // Verifica si la posición del scroll alcanza la cantidad deseada.
     if (scrollPosition >= cantidadpixeles) {
-        // Aplica los cambios de estilo al elemento
+        // Aplica los cambios de estilo al elemento.
 
         cont_header.style.height = '100px';
         modificar_tamaño(img_logo);
@@ -254,7 +263,25 @@ function activar() {
 
 }
 
+function actualizar_contador() {
+    let cont_padre = event.target.parentNode;
+    contador--;
+    carrito.textContent = contador;
 
+    let precio = cont_padre.querySelector(".text_producto").innerText;
+    precio = precio.replace(/\./g, '');
+    precio = precio.match(/\d+/g);
+    precio = parseFloat(precio);
+
+    total = totalElement.innerText;
+    total = total.replace(/\./g, '');
+    total = total.match(/\d+/g);
+    total = parseFloat(total);
+    total-=precio
+    totalElement.innerText = `Total: $${total.toFixed(0)}`;
+    cont_padre.remove();
+
+}
 
 function filtro(...clases) {
     clases.forEach(clase => {

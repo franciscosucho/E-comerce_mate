@@ -10,10 +10,10 @@ body {
   justify-content: flex-end;
   align-items: center;
   overflow-y: scroll;
-  background-color: #1D7363;
+  background-color: #3d3d3d;
 }
 body header {
-  background-color: #1D7363;
+  background-color: #808080;
   padding: 10px;
   height: 30vh;
   display: flex;
@@ -27,7 +27,7 @@ body header {
   transition: height ease-in-out 0.5s;
 }
 body header .cont-header {
-  background-color: #1D7363;
+  background-color: #808080;
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -49,7 +49,7 @@ body header .cont-header .compra.active {
   width: 60em;
   top: 0%;
   border-left: 1px solid black;
-  background-color: #113b34;
+  background-color: #6a6a69;
 }
 body header .cont-header .compra .cancel {
   transition: all 0.2s ease-in-out;
@@ -89,7 +89,7 @@ body header .cont-header .compra .lista-de-compra {
   border: 1px solid black;
   list-style: none;
   flex-direction: column;
-  background-color: #113b34;
+  background-color: #6a6a69;
 }
 body header .cont-header .compra .lista-de-compra h3 {
   color: #070707;
@@ -281,7 +281,7 @@ body header nav .menu-horizontal li .menu-vertical .sub-menu .ultimo {
 }
 body main {
   margin-top: 400px;
-  background-color: #1D7363;
+  background-color: #3d3d3d;
   height: 100%;
   width: 100vw;
   display: flex;
@@ -345,7 +345,7 @@ body main h1 {
   text-align: center;
   width: 100%;
   font-size: 3em;
-  color: rgb(221, 194, 123);
+  color: #bba9a9;
   font-family: "Bonny", serif;
 }
 body main .custom-loader {
@@ -514,7 +514,7 @@ body main .cont-productos .articulo img {
 }
 body main .cont-productos .articulo p {
   transition: all 0.2s ease-in-out;
-  color: rgb(117, 103, 65);
+  color: rgb(134, 115, 62);
   font-size: 1.4em;
 }
 body main .cont-productos .articulo.filtro {
