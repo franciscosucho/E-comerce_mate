@@ -34,18 +34,18 @@ var precio_desde = document.getElementById("precio_desde");
 var precio_hasta = document.getElementById("precio_hasta");
 var articulo = document.querySelectorAll(".articulo");
 var cont_input = document.querySelector(".cont-input");
+var text_carrito = document.querySelector(".text_carrito");
 var carrito_total;
 const cancel = document.querySelector(".cancel");
 var total = 0;
 var cont_img = 1;
 var contador = 0;
 
-
 //parte de compra de los productos.
 //----------------------------------------------------------------
 
 cart.addEventListener('click', () => {
-
+    desactivar()
     activar()
 })
 
@@ -59,7 +59,9 @@ agregar.forEach((elemento) => {
         const productName = productItem.querySelector('.product-name').innerText;
         const productPrice = productItem.querySelector('.product-price').innerText;
         const productimg = productItem.querySelector('img');
-        const price = productPrice;
+        var price = productPrice;
+        price = price.replace('.', '')
+        price = parseFloat(price);
         // Extraer solo el valor numérico del precio
         addcarrito(productName, price, productimg)
 
@@ -71,10 +73,11 @@ function addcarrito(producto, precio, img) {
     var producto_lista = document.createElement('li');
     producto_lista.classList.add("producto_lista");
     var text_producto = document.createElement('p');
-
-    text_producto.innerText = `${producto}-$${precio}`;
+    var precio_producto = document.createElement('p');
+    precio_producto.innerText = precio;
+    text_producto.innerText = `${producto}-$`;
     text_producto.classList.add('text_producto');
-
+    precio_producto.classList.add('precio_producto');
     var img_producto = document.createElement('img');
     img_producto.src = img.src
     img_producto.classList.add('img_producto');
@@ -84,26 +87,21 @@ function addcarrito(producto, precio, img) {
     //crea un evento a cada objeto.
     icon_delete.addEventListener('click', actualizar_contador);
 
-    icon_delete.src = '/img/trash.png';
+    icon_delete.src = 'img/trash.png';
+
     producto_lista.appendChild(img_producto);
     producto_lista.appendChild(icon_delete);
     producto_lista.appendChild(text_producto);
+    producto_lista.appendChild(precio_producto);
     lista_de_compra.appendChild(producto_lista);
 
 
     contador++;
 
-    if (contador == 0) {
-        vacio.style.display = "block";
-
-    }
-    else {
-        vacio.style.display = "none";
-
-    }
+    desactivar()
     carrito.textContent = contador;
     total += parseFloat(precio);
-    totalElement.innerText = `Total: $${total.toFixed(3)}`;
+    totalElement.innerText = `Total: $${total.toFixed(0)}`;
 }
 
 cancel.addEventListener("click", () => {
@@ -236,6 +234,7 @@ filtro_yerbas.addEventListener("click", () => {
 //funciones
 
 function activar() {
+    text_carrito.classList.toggle("active");
     carrito.classList.toggle("active");
     lista_de_compra.classList.toggle("active");
     cont_compra.classList.toggle("active");
@@ -268,21 +267,46 @@ function actualizar_contador() {
     contador--;
     carrito.textContent = contador;
 
-    let precio = cont_padre.querySelector(".text_producto").innerText;
+    let precio = cont_padre.querySelector(".precio_producto").innerText;
     precio = precio.replace(/\./g, '');
     precio = precio.match(/\d+/g);
     precio = parseFloat(precio);
 
     total = totalElement.innerText;
-    total = total.replace(/\./g, '');
+
     total = total.match(/\d+/g);
     total = parseFloat(total);
-    total-=precio
+    total -= precio
     totalElement.innerText = `Total: $${total.toFixed(0)}`;
     cont_padre.remove();
+    desactivar()
 
 }
 
+function desactivar() {
+    const estilo = getComputedStyle(lista_de_compra);
+
+    if (estilo.display === 'none') {
+        btn_compra.style.display = "none";
+    }
+    else {
+        if (contador != 0) {
+            btn_compra.style.display = "block";
+        }
+        else {
+            btn_compra.style.display = "none";
+        }
+    }
+    if (contador == 0) {
+        vacio.style.display = "block";
+
+    }
+    else {
+        vacio.style.display = "none";
+
+    }
+
+}
 function filtro(...clases) {
     clases.forEach(clase => {
         const elementos = document.querySelectorAll('.' + clase);
