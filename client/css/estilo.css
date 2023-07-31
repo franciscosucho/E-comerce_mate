@@ -275,7 +275,7 @@ body main h1::after {
   background-color: #25D366;
 }
 body main .destacado {
-  margin-top: 100px;
+  margin-top: 60px;
   color: rgb(0, 0, 0);
   font-size: 2em;
   font-weight: bolder;
@@ -283,7 +283,7 @@ body main .destacado {
 }
 body main .desc {
   display: none;
-  margin-top: 100px;
+  margin-top: 60px;
   font-size: 2em;
   font-weight: bolder;
   border-bottom: 3px solid black;
@@ -296,7 +296,7 @@ body main .compra {
   border-radius: 50%;
   position: fixed;
   right: 1%;
-  top: 93%;
+  bottom: 20px;
   padding-top: 50px;
   display: flex;
   align-items: center;
@@ -494,7 +494,7 @@ body main .filtro {
   justify-content: flex-start;
   align-items: flex-start;
   left: 0.5vw;
-  top: 45%;
+  top: 60%;
   box-shadow: 10px 4px 10px rgba(102, 101, 101, 0.5);
   width: 20vh;
   min-width: 15vh;
@@ -635,7 +635,7 @@ body main .cont-productos .articulo {
   align-items: center;
   flex-direction: column;
   width: 20vw;
-  height: 50vh;
+  height: 55vh;
   border-radius: 10px;
   gap: 10px;
   transition: all 0.7s ease-in-out;
@@ -660,16 +660,16 @@ body main .cont-productos .articulo .product-name {
   color: #333333;
 }
 body main .cont-productos .articulo .agregar {
+  position: initial;
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 44vh;
-  position: absolute;
   cursor: pointer;
   background-color: #776344;
   color: rgb(255, 255, 255);
+  margin-top: 20px;
   height: 40px;
-  width: 15%;
+  width: 60%;
   border-radius: 30px;
   font-size: 1em;
 }
@@ -766,10 +766,6 @@ body main footer .div-contacto a:hover {
   body header .menu .menu-horizontal {
     gap: 20px;
   }
-  body main .filtro {
-    width: 10vh;
-    top: 35%;
-  }
   body main .cont-productos {
     display: grid;
     justify-content: center;
@@ -784,8 +780,5 @@ body main footer .div-contacto a:hover {
     align-items: center;
     padding: 20px;
     width: 30vw;
-  }
-  body main .cont-productos .articulo .agregar {
-    margin-top: 12%;
   }
 }/*# sourceMappingURL=estilo.css.map */

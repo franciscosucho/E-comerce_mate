@@ -19,9 +19,10 @@
     justify-content: center;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
     animation: breathe 2s ease-in-out infinite;
-    &:hover{
-        &::after{
-            
+
+    &:hover {
+        &::after {
+
             content: 'Hola,¿podemos ayudar en algo?';
             text-align: center;
             padding: 5px;
@@ -94,6 +95,7 @@ body {
         padding-top: 180px;
         transition: height ease-in-out .5s;
         width: 100%;
+
         .material-symbols-outlined {
             color: #D9C9B9;
             font-variation-settings:
@@ -102,6 +104,7 @@ body {
                 'GRAD' 0,
                 'opsz' 48
         }
+
         nav {
             border: 1px solid gray;
             display: flex;
@@ -136,13 +139,15 @@ body {
                     border: none;
                     width: 8vw;
                     background-color: rgba(119, 68, 68, 0);
+
                     &:focus {
                         outline: none;
                         color: #000000;
                     }
+
                     &::placeholder {
                         color: rgb(56, 56, 56);
-                      }
+                    }
                 }
 
                 .material-symbols-outlined {
@@ -203,7 +208,8 @@ body {
                         text-decoration: none;
                         color: rgb(0, 0, 0);
                         transition: .3s;
-                        &:hover{
+
+                        &:hover {
                             color: white;
 
                             a {
@@ -216,8 +222,9 @@ body {
                         a {
                             color: rgb(255, 255, 255);
                         }
+
                         .menu-vertical {
-                            
+
                             display: block;
 
                         }
@@ -311,10 +318,11 @@ body {
             width: 100%;
             display: block;
             font-size: 3em;
-            
+
             color: #1f1f1f;
             font-family: 'Bonny', serif;
-            &::after{
+
+            &::after {
                 position: relative;
                 left: 50%;
                 display: flex;
@@ -326,20 +334,23 @@ body {
                 background-color: #25D366;
             }
         }
-        .destacado{
-            margin-top: 100px;
+
+        .destacado {
+            margin-top: 60px;
             color: rgb(0, 0, 0);
             font-size: 2em;
             font-weight: bolder;
             border-bottom: 3px solid black;
         }
-        .desc{
+
+        .desc {
             display: none;
-            margin-top: 100px;
+            margin-top: 60px;
             font-size: 2em;
             font-weight: bolder;
             border-bottom: 3px solid black;
         }
+
         .compra {
             border: 1px solid gray;
             background-color: white;
@@ -348,7 +359,7 @@ body {
             border-radius: 50%;
             position: fixed;
             right: 1%;
-            top: 93%;
+            bottom: 20px;
             padding-top: 50px;
             display: flex;
             align-items: center;
@@ -372,7 +383,7 @@ body {
                 width: 40em;
                 top: 0%;
                 border-left: 1px solid rgb(0, 0, 0);
-                background-color:#979797;
+                background-color: #979797;
             }
 
             .cancel {
@@ -504,10 +515,10 @@ body {
 
                     .precio_producto {
                         font-family: 'Times New Roman', Times, serif;
-                        
+
                         font-size: 1.4em;
                         font-weight: 600;
-                        color:rgb(36, 36, 36);
+                        color: rgb(36, 36, 36);
 
                     }
 
@@ -520,6 +531,7 @@ body {
 
                     &:hover {
                         transition: all .3s ease-in-out;
+
                         .img_producto {
                             width: 80px;
                             height: 80px;
@@ -580,7 +592,7 @@ body {
             margin: 0 auto;
         }
 
-        
+
         .filtro {
             background-color: #53452e;
             border-radius: 20px;
@@ -593,7 +605,7 @@ body {
             justify-content: flex-start;
             align-items: flex-start;
             left: .5vw;
-            top: 45%;
+            top: 60%;
             box-shadow: 10px 4px 10px rgba(102, 101, 101, 0.5);
             width: 20vh;
             min-width: 15vh;
@@ -770,12 +782,12 @@ body {
                 align-items: center;
                 flex-direction: column;
                 width: 20vw;
-                height: 50vh;
+                height: 55vh;
                 border-radius: 10px;
                 gap: 10px;
                 transition: all 0.7s ease-in-out;
                 border: 1px solid gray;
-
+                
                 &:hover {
                     img {
                         filter: brightness(60%);
@@ -788,10 +800,11 @@ body {
                     font-family: 'Times New Roman', Times, serif;
                     font-size: 1.4em;
                     font-weight: 600;
-                    color:rgb(36, 36, 36);
+                    color: rgb(36, 36, 36);
                 }
 
                 .product-name {
+
                     font-family: "Rasputin";
                     font-weight: 500;
                     font-size: 1.4em;
@@ -799,22 +812,21 @@ body {
                 }
 
                 .agregar {
+                    position: initial;
                     display: flex;
                     justify-content: center;
                     align-items: center;
-                    margin-top: 44vh;
-                    position: absolute;
-                   
                     cursor: pointer;
                     background-color: #776344;
                     color: rgb(255, 255, 255);
+                    margin-top: 20px;
                     height: 40px;
-                    width: 15%;
+                    width: 60%;
                     border-radius: 30px;
                     font-size: 1em;
 
-                    &:hover{
-                        background-color:  #5e4e36;
+                    &:hover {
+                        background-color: #5e4e36;
                     }
                 }
 
@@ -948,10 +960,7 @@ body {
 
 
         main {
-            .filtro {
-                width: 10vh;
-                top: 35%;
-            }
+         
 
             .cont-productos {
                 display: grid;
@@ -968,9 +977,9 @@ body {
                     padding: 20px;
                     width: 30vw;
 
-                    .agregar {
-                        margin-top: 12%;
-                    }
+                    //.agregar {
+                   //     margin-top: 12%;
+                   // }
                 }
 
 
