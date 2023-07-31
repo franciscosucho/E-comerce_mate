@@ -28,6 +28,7 @@ var cart = document.querySelector(".cart");
 var cont_registro = document.querySelector(".cont-regis");
 const img_logo = document.querySelector(".img-logo");
 const vacio = document.querySelector(".vacio")
+var cancel = document.querySelector(".cancel")
 var btn_compra = document.querySelector(".btn-compra")
 var btn_precio = document.querySelector(".btn_precio");
 var precio_desde = document.getElementById("precio_desde");
@@ -35,11 +36,29 @@ var precio_hasta = document.getElementById("precio_hasta");
 var articulo = document.querySelectorAll(".articulo");
 var cont_input = document.querySelector(".cont-input");
 var text_carrito = document.querySelector(".text_carrito");
-var carrito_total;
-const cancel = document.querySelector(".cancel");
+const arrow_down = document.querySelector(".arrow_down");
+const arrow_up = document.querySelector(".arrow_up");
+const cont_filtros = document.querySelector(".cont_filtros");
+const destado = document.querySelector(".destacado");
+var desc = document.querySelector(".desc")
 var total = 0;
 var cont_img = 1;
 var contador = 0;
+
+
+arrow_down.addEventListener('click', () => {
+    arrow_down.classList.toggle('active');
+    arrow_up.classList.toggle('active');
+    cont_filtros.classList.toggle('active');
+})
+
+arrow_up.addEventListener('click', () => {
+    arrow_down.classList.toggle('active');
+    arrow_up.classList.toggle('active');
+    cont_filtros.classList.toggle('active');
+})
+
+
 
 //parte de compra de los productos.
 //----------------------------------------------------------------
@@ -48,9 +67,6 @@ cart.addEventListener('click', () => {
     desactivar()
     activar()
 })
-
-
-
 
 agregar.forEach((elemento) => {
 
@@ -117,26 +133,6 @@ nav_producto.addEventListener('click', () => {
     filtro_text.style.top = "50%";
 })
 
-window.addEventListener('scroll', function () {
-    var cont_header = this.document.querySelector(".cont-header");
-    var header = document.querySelector(".header");
-    // Obtén la posición actual del scroll en píxeles.
-    const scrollPosition = window.pageYOffset || document.documentElement.scrollTop;
-
-    // Verifica si la posición del scroll alcanza la cantidad deseada.
-    if (scrollPosition >= cantidadpixeles) {
-        // Aplica los cambios de estilo al elemento.
-
-        cont_header.style.height = '100px';
-        modificar_tamaño(img_logo);
-        header.style.height = '19vh';
-    } else {
-        cont_header.style.height = 'auto';
-        header.style.height = '30vh'
-        // Restaura los estilos originales del elemento
-        restore(img_logo);
-    }
-});
 //----------------------------------------------------------------
 
 
@@ -195,39 +191,67 @@ btn_precio.addEventListener('click', () => {
     animacion()
 
 })
+
 filtro_termos.addEventListener("click", () => {
 
     reset()
+
     filtro('imperial', 'camionero', 'bombilla', 'torpedo', 'yerbas')
+    setTimeout(function () {
+        desc.innerText = "Termos";
+    }, 1000);
 })
 
 filtro_torpedos.addEventListener("click", () => {
 
     reset()
-    filtro('imperial', 'camionero', 'bombilla', 'termo', 'yerbas')
+    filtro('imperial', 'camionero', 'bombilla', 'termo', 'yerbas');
+    setTimeout(function () {
+        desc.innerText = "Torpedos";
+    }, 1000);
+
 })
 filtro_mates.addEventListener("click", () => {
 
     reset()
-    filtro('bombilla', 'termo', 'yerbas')
+    filtro('bombilla', 'termo', 'yerbas', 'destacado');
+    setTimeout(function () {
+        desc.innerText = "Mates";
+    }, 1000);
 })
-filtro_todo.addEventListener("click", () => { reset() });
+filtro_todo.addEventListener("click", () => {
+    reset()
+    // Esperar 1 segundo (1000 milisegundos)
+    setTimeout(function () {
+        desc.style.display = "none";
+        destado.style.display = "block";
+    }, 1000);
+});
 
 filtro_imperial.addEventListener("click", () => {
 
-    reset()
-    filtro('torpedo', 'camionero', 'bombilla', 'termo', 'yerbas')
+    reset();
+    filtro('torpedo', 'camionero', 'bombilla', 'termo', 'yerbas');
+    setTimeout(function () {
+        desc.innerText = "Imperiales";
+    }, 1000);
 })
 
 filtro_bombillas.addEventListener("click", () => {
 
-    reset()
-    filtro('imperial', 'camionero', 'torpedo', 'termo', 'yerbas')
+    reset();
+    filtro('imperial', 'camionero', 'torpedo', 'termo', 'yerbas');
+    setTimeout(function () {
+        desc.innerText = "Bombillas";
+    }, 1000);
 })
 filtro_yerbas.addEventListener("click", () => {
 
-    reset()
-    filtro('imperial', 'camionero', 'torpedo', 'termo', 'bombilla')
+    reset();
+    filtro('imperial', 'camionero', 'torpedo', 'termo', 'bombilla');
+    setTimeout(function () {
+        desc.innerText = "Yerbas";
+    }, 1000);
 })
 //----------------------------------------------------------------
 
@@ -307,17 +331,22 @@ function desactivar() {
     }
 
 }
+
 function filtro(...clases) {
+    destado.style.display = "none";
     clases.forEach(clase => {
         const elementos = document.querySelectorAll('.' + clase);
         elementos.forEach(elemento => {
             elemento.style.display = 'none';
         });
     });
+
 }
 function reset() {
 
     animacion();
+    desc.style.display = "block";
+    desc.innerText = ""
     let productos = document.querySelectorAll(".articulo");
     productos.forEach(producto => {
         producto.style.display = 'flex';
@@ -333,17 +362,12 @@ function modificar_tamaño(...elementos) {
         elemento.style.transform = 'scale(.6)';
     });
 }
-function restore(...elementos) {
-    elementos.forEach(elemento => {
-        elemento.style.transition = "all .5s ease-in-out";
-        // Aplica los cambios de estilo al elemento
-        elemento.style.transform = 'scale(1)';
-    });
-}
+
 function animacion() {
     loader.style.display = "flex"
     footer.style.display = "none";
     cont_productos.style.display = "none";
+
     // Esperar 1 segundo (1000 milisegundos)
     setTimeout(function () {
         footer.style.display = "flex";
@@ -351,5 +375,6 @@ function animacion() {
         // Ocultar la animación de carga después de 1 segundo
         cont_productos.style.display = "grid";
     }, 1000);
+
 }
 //----------------------------------------------------------------

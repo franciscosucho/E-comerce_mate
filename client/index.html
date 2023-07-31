@@ -12,8 +12,22 @@
     <link
         href="https://api.fontshare.com/v2/css?f[]=quicksand@500&f[]=britney@400&f[]=general-sans@300&f[]=boska@400,300&f[]=hind@400&f[]=zodiak@400,100&display=swap"
         rel="stylesheet">
-    <link rel="icon" type="image/x-icon" href="img/la choza del mate-1.png">
+    <link rel="icon" type="image/x-icon" href="img/logo_header.png">
     <link href="https://api.fontshare.com/v2/css?f[]=panchang@700&display=swap" rel="stylesheet">
+    <link
+        href="https://api.fontshare.com/v2/css?f[]=panchang@700&f[]=gambarino@400&f[]=synonym@400&f[]=amulya@700&f[]=switzer@400&f[]=boska@701&display=swap"
+        rel="stylesheet">
+    <script type="text/javascript">
+        window.onload = function () {
+            (function (d, script) {
+                script = d.createElement('script');
+                script.type = 'text/javascript';
+                script.async = true;
+                script.src = 'https://w.app/widget-v1/WOcVZY.js';
+                d.getElementsByTagName('head')[0].appendChild(script);
+            }(document));
+        };
+    </script>
 </head>
 
 <body>
@@ -83,43 +97,55 @@
                 <li>
                     <a href="/index.html ">Registrarse</a>
                 </li>
-                <div class="cont-input">
-                    <input id="buscador" type="text" placeholder="Buscar">
-                    <span class="material-symbols-outlined">search </span>
-                </div>
-                <div class="compra">
-                    <div class="sub-compra">
-                        <span class="material-symbols-outlined cart">
-                            shopping_cart
 
-                        </span>
-                        <span class="material-symbols-outlined cancel">
-                            cancel
-                        </span>
-                        <h3 class="text_carrito">Carrito de compra</h3>
-                        <p id="carrito">0</p>
-                    </div>
-
-                    <ul class="lista-de-compra">
-                        <h4 id="total">Total:$0</h4>
-                        <h3 class="vacio">El carrito esta vacio</h3>
-
-
-                    </ul>
-                    <div class="cont_btn_compra">
-                        <button class="btn-compra"> Comprar</button>
-                    </div>
-
-                </div>
             </ul>
+            <div class="cont-input">
+                <input id="buscador" type="text" placeholder="Buscar">
+                <span class="material-symbols-outlined">search </span>
+            </div>
         </nav>
     </header>
-    <main>
-
+    <main class="main">
         <h1 class="h1">Tu rincón para disfrutar del sabor y la tradición del mate</h1>
+
+        <h3 class="destacado">DESTACADOS</h3>
+        <h3 class="desc"></h3>
+        <div class="compra">
+            <div class="sub-compra">
+                <span class="material-symbols-outlined cart">
+                    shopping_bag
+
+                </span>
+                <span class="material-symbols-outlined cancel">
+                    cancel
+                </span>
+                <h3 class="text_carrito">Carrito de compra</h3>
+                <p id="carrito">0</p>
+            </div>
+
+            <ul class="lista-de-compra">
+                <h4 id="total">Total:$0</h4>
+                <h3 class="vacio">El carrito esta vacio</h3>
+
+
+            </ul>
+            <div class="cont_btn_compra">
+                <button class="btn-compra"> Comprar</button>
+            </div>
+
+        </div>
         <article class="filtro">
-            <h3>Filtros</h3>
-            <ul>
+            <div class="cont_arrow">
+                <h3>Filtros</h3>
+                <span class="material-symbols-outlined arrow_down">
+                    arrow_drop_down
+                </span>
+                <span class="material-symbols-outlined arrow_up">
+                    arrow_drop_up
+                </span>
+            </div>
+
+            <ul class="cont_filtros">
                 <li class="filtro_todo">ver todo</li>
                 <li class="filtro_imperial">imperiales</li>
                 <li class="filtro_torpedos">torpedos</li>
@@ -143,80 +169,85 @@
 
             <div class="articulo imperial ">
                 <img src="img/imperial-1.webp" alt="imperial">
-                <span class="agregar">+</span>
-                <p class="product-price">9.000$</p>
-                <p class="product-name">Mate Imperial marron con alpaca</p>
 
+
+                <p class="product-name">Mate Imperial marron con alpaca</p>
+                <p class="product-price">9.000$</p>
+                <span class="agregar">AÑADIR AL CARRITO</span>
             </div>
 
             <div class="articulo torpedo">
-                <span class="agregar">+</span>
+
                 <img src="img/torpedo.webp" alt="imperial">
-                <p class="product-price">6.000$</p>
                 <p class="product-name">Mate Torpedo </p>
+                <p class="product-price">6.000$</p>
+                <span class="agregar">AÑADIR AL CARRITO</span>
             </div>
 
             <div class="articulo camionero">
-                <span class="agregar">+</span>
+
                 <img src="img/camionero.webp" alt="imperial">
-                <p class="product-price">5.500$</p>
                 <p class="product-name">Mate Camionero</p>
+                <p class="product-price">5.500$</p>
+                <span class="agregar">AÑADIR AL CARRITO</span>
             </div>
 
             <div class="articulo termo">
-                <span class="agregar">+</span>
                 <img src="img/termo acero.jpeg" alt="imperial">
-                <p class="product-price">9.500$</p>
                 <p class="product-name">Termo media manija de acero</p>
+                <p class="product-price">9.500$</p>
+                <span class="agregar">AÑADIR AL CARRITO</span>
             </div>
             <div class="articulo termo">
-                <span class="agregar">+</span>
                 <img src="img/termo negro.jpeg" alt="imperial">
-                <p class="product-price">11.500$</p>
                 <p class="product-name">Termo media manija negro</p>
+                <p class="product-price">11.500$</p>
+                <span class="agregar">AÑADIR AL CARRITO</span>
             </div>
 
             <div class="articulo imperial">
-                <span class="agregar">+</span>
                 <img src="img/imperial marron.jpg" alt="imperial">
-                <p class="product-price">12.500$</p>
                 <p class="product-name">Mate Imperial marron con bombilla</p>
+                <p class="product-price">12.500$</p>
+                <span class="agregar">AÑADIR AL CARRITO</span>
             </div>
             <div class="articulo imperial ">
-                <span class="agregar">+</span>
                 <img src="img/imperial negro.jpg" alt="imperial">
-                <p class="product-price">10.500$</p>
                 <p class="product-name">Mate Imperial negro de alpaca</p>
+                <p class="product-price">10.500$</p>
+                <span class="agregar">AÑADIR AL CARRITO</span>
             </div>
             <div class="articulo bombilla ">
-                <span class="agregar">+</span>
                 <img src="img/bombilla-1.jpeg" alt="imperial">
-                <p class="product-price">5.000$</p>
                 <p class="product-name">Bombilla de alpaca cincelada</p>
+                <p class="product-price">5.000$</p>
+                <span class="agregar">AÑADIR AL CARRITO</span>
             </div>
             <div class="articulo bombilla ">
-                <span class="agregar">+</span>
                 <img src="img/bombilla resorte.jpg" alt="imperial">
-                <p class="product-price">3.300$</p>
                 <p class="product-name">Bombilla de resorte simple</p>
+                <p class="product-price">3.300$</p>
+                <span class="agregar">AÑADIR AL CARRITO</span>
             </div>
             <div class="articulo yerbas ">
-                <span class="agregar">+</span>
                 <img src="img/yerba_kraus.jpg" alt="imperial">
-                <p class="product-price">1.000$</p>
                 <p class="product-name">Yerba Kraus 500G</p>
+                <p class="product-price">1.000$</p>
+                <span class="agregar">AÑADIR AL CARRITO</span>
             </div>
             <div class="articulo yerbas ">
-                <span class="agregar">+</span>
+
                 <img src="img/yerba_baldo.jpg" alt="imperial">
-                <p class="product-price">1.120$</p>
                 <p class="product-name">Yerba Baldo 1Kg</p>
+                <p class="product-price">1.120$</p>
+                <span class="agregar">AÑADIR AL CARRITO</span>
             </div>
             <div class="articulo yerbas ">
-                <span class="agregar">+</span>
+
                 <img src="img/yerba_canarias.jpg" alt="imperial">
-                <p class="product-price">1.700$</p>
                 <p class="product-name">Yerba Canarias de 1kg</p>
+                <p class="product-price">1.700$</p>
+                <span class="agregar">AÑADIR AL CARRITO</span>
             </div>
 
         </article>
