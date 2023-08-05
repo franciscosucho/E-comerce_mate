@@ -73,7 +73,7 @@ body {
 body header {
   background-color: #979797;
   padding: 10px;
-  height: 100px;
+  height: 120px;
   display: flex;
   z-index: 100;
   align-items: center;
@@ -81,7 +81,6 @@ body header {
   flex-direction: column;
   position: fixed;
   top: 0%;
-  padding-top: 180px;
   transition: height ease-in-out 0.5s;
   width: 100%;
 }
@@ -90,6 +89,7 @@ body header .material-symbols-outlined {
   font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 48;
 }
 body header nav {
+  margin-top: 10px;
   border: 1px solid gray;
   display: flex;
   justify-content: center;
@@ -97,10 +97,8 @@ body header nav {
   width: 90%;
   border-radius: 100px;
   height: 10vh;
-  margin-top: 20px;
   background-color: #979797;
   font-size: 20px;
-  margin-bottom: 200px;
   box-shadow: 0 10px 10px #888888;
   /* Box shadow aplicado */
 }
@@ -171,18 +169,62 @@ body header nav .menu-horizontal li {
   color: white;
   text-decoration: none;
 }
-body header nav .menu-horizontal li a {
+body header nav .menu-horizontal li a,
+body header nav .menu-horizontal li p {
+  cursor: pointer;
   font-size: 0.8em;
   font-weight: 100;
   text-decoration: none;
   color: rgb(0, 0, 0);
   transition: 0.3s;
 }
-body header nav .menu-horizontal li a:hover {
+body header nav .menu-horizontal li a:hover,
+body header nav .menu-horizontal li p:hover {
   color: white;
 }
-body header nav .menu-horizontal li a:hover a {
+body header nav .menu-horizontal li a:hover a,
+body header nav .menu-horizontal li p:hover a {
   color: rgb(255, 255, 255);
+}
+body header nav .menu-horizontal li .div_ini_sesion {
+  display: none;
+  position: fixed;
+  top: 20%;
+  left: 30%;
+  background-color: rgba(0, 0, 0, 0.7411764706);
+  height: 50vh;
+  width: 50vw;
+}
+body header nav .menu-horizontal li .div_ini_sesion.active {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+body header nav .menu-horizontal li .div_ini_sesion h2 {
+  width: 100%;
+  text-align: center;
+  font-size: 2.5em;
+}
+body header nav .menu-horizontal li .div_ini_sesion * {
+  margin-top: 30px;
+  display: block;
+}
+body header nav .menu-horizontal li .div_ini_sesion input {
+  color: white;
+  background-color: rgba(0, 0, 0, 0);
+  border: none;
+  border-bottom: 1px solid rgb(255, 255, 255);
+}
+body header nav .menu-horizontal li .div_ini_sesion input:focus {
+  outline: none;
+  color: #ffffff;
+}
+body header nav .menu-horizontal li .div_ini_sesion button {
+  border: 1ps solid black;
+}
+body header nav .menu-horizontal li .div_ini_sesion button:focus {
+  outline: none;
 }
 body header nav .menu-horizontal li:hover a {
   color: rgb(255, 255, 255);
@@ -199,9 +241,10 @@ body header nav .menu-horizontal li .menu-vertical {
   width: 200px;
   height: 185px;
   border: 1px solid black;
-  background-color: #D9C9B9;
+  background-color: #979797;
 }
 body header nav .menu-horizontal li .menu-vertical li {
+  cursor: pointer;
   display: flex;
   justify-content: flex-start;
   align-items: center;
@@ -225,7 +268,7 @@ body header nav .menu-horizontal li .menu-vertical .sub-menu {
   margin-top: 41px;
   display: none;
   list-style: none;
-  background-color: #D9C9B9;
+  background-color: #979797;
 }
 body header nav .menu-horizontal li .menu-vertical .sub-menu li {
   padding-bottom: 20px;
@@ -276,17 +319,18 @@ body main h1::after {
 }
 body main .destacado {
   margin-top: 60px;
-  color: rgb(0, 0, 0);
+  color: #53452e;
   font-size: 2em;
   font-weight: bolder;
-  border-bottom: 3px solid black;
+  border-bottom: 3px solid #53452e;
 }
 body main .desc {
   display: none;
   margin-top: 60px;
   font-size: 2em;
   font-weight: bolder;
-  border-bottom: 3px solid black;
+  color: #53452e;
+  border-bottom: 3px solid #53452e;
 }
 body main .compra {
   border: 1px solid gray;
@@ -494,7 +538,7 @@ body main .filtro {
   justify-content: flex-start;
   align-items: flex-start;
   left: 0.5vw;
-  top: 60%;
+  top: 40%;
   box-shadow: 10px 4px 10px rgba(102, 101, 101, 0.5);
   width: 20vh;
   min-width: 15vh;
@@ -660,14 +704,13 @@ body main .cont-productos .articulo .product-name {
   color: #333333;
 }
 body main .cont-productos .articulo .agregar {
-  position: initial;
   display: flex;
   justify-content: center;
   align-items: center;
   cursor: pointer;
   background-color: #776344;
   color: rgb(255, 255, 255);
-  margin-top: 20px;
+  margin-top: 40%;
   height: 40px;
   width: 60%;
   border-radius: 30px;
@@ -686,14 +729,15 @@ body main .cont-productos .articulo.filtro {
   display: none;
 }
 body main footer {
-  position: relative;
-  top: 100vh;
+  margin-top: 200px;
+  padding-top: 20px;
   display: flex;
-  justify-content: space-around;
+  gap: 20%;
+  justify-content: center;
   align-items: center;
   height: 15em;
   width: 100vw;
-  background-color: #D9C9B9;
+  background-color: #868686;
 }
 body main footer .navegacion {
   height: 100%;
@@ -713,9 +757,6 @@ body main footer .navegacion ul li {
 }
 body main footer .navegacion ul li:hover {
   box-shadow: 0 1px 0 0 rgb(0, 0, 0);
-}
-body main footer .derechos {
-  height: 100%;
 }
 body main footer .div-contacto {
   display: flex;
@@ -767,18 +808,28 @@ body main footer .div-contacto a:hover {
     gap: 20px;
   }
   body main .cont-productos {
-    display: grid;
-    justify-content: center;
-    align-content: center;
-    grid-template-columns: repeat(2, 1fr);
-    width: 70%;
+    grid-template-columns: repeat(3, 1fr);
     margin-left: 100px;
   }
-  body main .cont-productos .articulo {
+}
+@media (max-height: 675px) {
+  body main .filtro {
+    top: 70%;
+  }
+  body main .cont-productos .articulo .product-name {
+    font-family: "Rasputin";
+    font-weight: 500;
+    font-size: 1em;
+    color: #333333;
+  }
+  body main .cont-productos .articulo .agregar {
+    margin: 20px;
+    min-height: 40px;
+    width: 80%;
     display: flex;
-    justify-content: flex-start;
     align-items: center;
-    padding: 20px;
-    width: 30vw;
+    justify-content: center;
+    font-size: 0.7em;
+    margin-bottom: 10px;
   }
 }/*# sourceMappingURL=estilo.css.map */

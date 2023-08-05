@@ -41,22 +41,12 @@ const arrow_up = document.querySelector(".arrow_up");
 const cont_filtros = document.querySelector(".cont_filtros");
 const destado = document.querySelector(".destacado");
 var desc = document.querySelector(".desc")
+const ini_sesion = document.querySelector(".ini_sesion");
 var total = 0;
 var cont_img = 1;
 var contador = 0;
 
 
-arrow_down.addEventListener('click', () => {
-    arrow_down.classList.toggle('active');
-    arrow_up.classList.toggle('active');
-    cont_filtros.classList.toggle('active');
-})
-
-arrow_up.addEventListener('click', () => {
-    arrow_down.classList.toggle('active');
-    arrow_up.classList.toggle('active');
-    cont_filtros.classList.toggle('active');
-})
 
 
 
@@ -131,6 +121,20 @@ cancel.addEventListener("click", () => {
 nav_producto.addEventListener('click', () => {
     slider.style.display = "none";
     filtro_text.style.top = "50%";
+})
+arrow_down.addEventListener('click', () => {
+    arrow_down.classList.toggle('active');
+    arrow_up.classList.toggle('active');
+    cont_filtros.classList.toggle('active');
+})
+ini_sesion.addEventListener("click",()=>{
+    const div_ini_sesion =document.querySelector(".div_ini_sesion");
+    div_ini_sesion.classList.toggle('active');
+})
+arrow_up.addEventListener('click', () => {
+    arrow_down.classList.toggle('active');
+    arrow_up.classList.toggle('active');
+    cont_filtros.classList.toggle('active');
 })
 
 //----------------------------------------------------------------
