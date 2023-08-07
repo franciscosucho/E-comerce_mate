@@ -42,13 +42,10 @@ const cont_filtros = document.querySelector(".cont_filtros");
 const destado = document.querySelector(".destacado");
 var desc = document.querySelector(".desc")
 const ini_sesion = document.querySelector(".ini_sesion");
+const regis = document.getElementById("regis");
 var total = 0;
 var cont_img = 1;
 var contador = 0;
-
-
-
-
 
 //parte de compra de los productos.
 //----------------------------------------------------------------
@@ -127,10 +124,46 @@ arrow_down.addEventListener('click', () => {
     arrow_up.classList.toggle('active');
     cont_filtros.classList.toggle('active');
 })
-ini_sesion.addEventListener("click",()=>{
-    const div_ini_sesion =document.querySelector(".div_ini_sesion");
+
+
+var arrow_left = document.querySelectorAll(".arrow_left");
+arrow_left.forEach(arrow => {
+    arrow.addEventListener('click', () => {
+        let contenedor = arrow.closest('[class^="div_"]');
+        contenedor = contenedor.className;
+        contenedor = contenedor.split(' ')[0];
+        console.log(contenedor);
+
+        if (contenedor == "div_regis") {
+            arrow.classList.toggle('active');
+            let div_regis = document.querySelector(".div_regis")
+            div_regis.classList.toggle("active");
+        }
+        else {
+            let div_ini_sesion = document.querySelector(".div_sesion");
+            div_ini_sesion.classList.toggle('active');
+            arrow.classList.toggle('active');
+        }
+
+    })
+});
+
+regis.onclick = () => {
+    let div_regis = document.querySelector(".div_regis")
+    div_regis.classList.toggle("active");
+    arrow.classList.toggle('active');
+}
+
+
+
+ini_sesion.addEventListener("click", () => {
+    let div_ini_sesion = document.querySelector(".div_sesion");
+    // arrow_left.classList.toggle('active');
     div_ini_sesion.classList.toggle('active');
+
+
 })
+
 arrow_up.addEventListener('click', () => {
     arrow_down.classList.toggle('active');
     arrow_up.classList.toggle('active');

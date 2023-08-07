@@ -186,44 +186,96 @@ body header nav .menu-horizontal li a:hover a,
 body header nav .menu-horizontal li p:hover a {
   color: rgb(255, 255, 255);
 }
-body header nav .menu-horizontal li .div_ini_sesion {
-  display: none;
+body header nav .menu-horizontal li .estilo_sesion {
+  opacity: 0;
+  height: 0px;
+  width: 100vw;
+  transition: all 0.3s ease-in-out;
   position: fixed;
-  top: 20%;
-  left: 30%;
-  background-color: rgba(0, 0, 0, 0.7411764706);
-  height: 50vh;
-  width: 50vw;
-}
-body header nav .menu-horizontal li .div_ini_sesion.active {
+  left: 100%;
+  top: 100%;
   display: flex;
+  justify-content: center;
+  align-items: center;
   flex-direction: column;
+  background-color: rgba(0, 0, 0, 0.9843137255);
+}
+body header nav .menu-horizontal li .estilo_sesion.active {
+  left: 0%;
+  top: 0%;
+  opacity: 1;
+  height: 100%;
+}
+body header nav .menu-horizontal li .estilo_sesion form {
+  box-shadow: 0 2px 10px rgba(179, 177, 177, 0.9);
+  border: 1px solid wheat;
+  background-color: rgba(15, 15, 15, 0);
+  width: 30%;
+  height: 80%;
+  display: flex;
   justify-content: flex-start;
   align-items: center;
+  flex-direction: column;
+  border-radius: 50px;
 }
-body header nav .menu-horizontal li .div_ini_sesion h2 {
+body header nav .menu-horizontal li .estilo_sesion form div {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+  padding-left: 10px;
+}
+body header nav .menu-horizontal li .estilo_sesion form div .arrow_left {
+  font-size: 2em;
+  cursor: pointer;
+  display: inline;
+}
+body header nav .menu-horizontal li .estilo_sesion form div .arrow_left.active {
+  display: inline;
+}
+body header nav .menu-horizontal li .estilo_sesion form div h2 {
+  padding-right: 40px;
   width: 100%;
   text-align: center;
   font-size: 2.5em;
 }
-body header nav .menu-horizontal li .div_ini_sesion * {
+body header nav .menu-horizontal li .estilo_sesion form h6 {
+  font-size: 0.8em;
+  color: gray;
+  display: inline;
+}
+body header nav .menu-horizontal li .estilo_sesion form h6 a {
+  display: inline;
+  font-size: 1em;
+}
+body header nav .menu-horizontal li .estilo_sesion * {
   margin-top: 30px;
   display: block;
 }
-body header nav .menu-horizontal li .div_ini_sesion input {
+body header nav .menu-horizontal li .estilo_sesion input {
   color: white;
   background-color: rgba(0, 0, 0, 0);
-  border: none;
-  border-bottom: 1px solid rgb(255, 255, 255);
+  border: 1px solid rgb(66, 66, 66);
+  border-radius: 5px;
+  width: 60%;
+  padding: 10px;
+  box-shadow: 0 0px 4px rgba(179, 177, 177, 0.301);
 }
-body header nav .menu-horizontal li .div_ini_sesion input:focus {
+body header nav .menu-horizontal li .estilo_sesion input:focus {
   outline: none;
   color: #ffffff;
 }
-body header nav .menu-horizontal li .div_ini_sesion button {
-  border: 1ps solid black;
+body header nav .menu-horizontal li .estilo_sesion button {
+  border: 1px solid rgb(77, 77, 77);
+  background-color: rgb(150, 150, 150);
+  color: black;
+  font-size: 0.9em;
+  border-radius: 20px;
+  height: 6%;
+  width: 60%;
+  cursor: pointer;
 }
-body header nav .menu-horizontal li .div_ini_sesion button:focus {
+body header nav .menu-horizontal li .estilo_sesion button:focus {
   outline: none;
 }
 body header nav .menu-horizontal li:hover a {
