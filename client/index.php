@@ -34,6 +34,9 @@
                 <div class="cont_img">
                     <img class="img-logo" src="img/la choza del mate-1 (4) (1).png" alt="">
                     <h2>la choza del Mate</h2>
+                    <?php 
+                    echo($resultproductos)
+                    ?>
                 </div>
 
 
