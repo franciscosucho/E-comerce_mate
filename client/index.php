@@ -34,8 +34,12 @@
                 <div class="cont_img">
                     <img class="img-logo" src="img/la choza del mate-1 (4) (1).png" alt="">
                     <h2>la choza del Mate</h2>
-                    <?php 
-                    echo($resultproductos)
+                    <?php
+                    // Haciendo la conexión a la base de datos y pidiendo las canciones
+                    $conexionDatos = new mysqli('localhost', 'root', '', 'la_choza_del_mate');
+                    $queryproductos = "SELECT * FROM datos_productos";
+                    $resultproductos = mysqli_query($conexionDatos, $queryproductos);
+                    echo ($resultproductos[1]);
                     ?>
                 </div>
 
