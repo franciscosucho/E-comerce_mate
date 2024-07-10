@@ -73,16 +73,29 @@
 }
 
 
+// Variables de Colores
+$color-body: #0a0909;
+$color-sombra: #0f0f0f;
+$color-header-bg: #F5F5DC;
+$color-text-main: #A18452;
+$color-button-primary-bg: #8B4513;
+$color-button-primary-text: #FFFFFF;
+$color-button-secondary-bg: #FFD700;
+$color-button-secondary-text: #FFFFFF;
+$color-highlight: #FFD700;
+$color-text: #727171;
+$color-border: #D3D3D3;
+$color-card-bg: #D3D3D3;
 
 body {
     display: flex;
     justify-content: flex-end;
     align-items: center;
     overflow-y: scroll;
-    background-color: #979797;
+    background-color: $color-body;
 
     header {
-        background-color: #979797;
+        background-color: $color-body;
         padding: 10px;
         height: 120px;
         display: flex;
@@ -113,9 +126,9 @@ body {
             width: 90%;
             border-radius: 100px;
             height: 10vh;
-            background-color: #979797;
+            background-color: $color-body;
             font-size: 20px;
-            box-shadow: 0 10px 10px #888888;
+            box-shadow: 0 10px 10px $color-sombra;
 
             /* Box shadow aplicado */
             .cont-input {
@@ -129,10 +142,10 @@ body {
                 border-width: 0.5px;
                 width: 14vw;
                 margin: 10px;
-                color: #000000;
+                color: $color-text;
 
                 input {
-                    color: #000000;
+                    color: $color-text;
                     font-size: .8em;
                     border: none;
                     width: 8vw;
@@ -140,7 +153,7 @@ body {
 
                     &:focus {
                         outline: none;
-                        color: #000000;
+                        color: $color-text;
                     }
 
                     &::placeholder {
@@ -149,7 +162,7 @@ body {
                 }
 
                 .material-symbols-outlined {
-                    color: #050505;
+                    color: $color-text;
                     font-variation-settings:
                         'FILL' 0,
                         'wght' 400,
@@ -172,7 +185,7 @@ body {
                     justify-content: center;
 
                     .img-logo {
-                        color: #7881B0;
+                        color: $color-text;
                         cursor: pointer;
                         height: 9vh;
                         width: 9vw;
@@ -183,7 +196,7 @@ body {
                     }
 
                     h2 {
-                        color: #53452e;
+                        color: $color-text-main;
                         height: 100%;
                         width: 12vw;
                         font-family: 'Panchang', sans-serif;
@@ -205,7 +218,7 @@ body {
                         font-size: .8em;
                         font-weight: 100;
                         text-decoration: none;
-                        color: rgb(0, 0, 0);
+                        color: $color-text;
                         transition: .3s;
 
                         &:hover {
@@ -217,7 +230,7 @@ body {
                         }
                     }
 
-                    .estilo_sesion{
+                    .estilo_sesion {
                         opacity: 0;
                         height: 0px;
                         width: 100vw;
@@ -306,6 +319,7 @@ body {
                             width: 60%;
                             padding: 10px;
                             box-shadow: 0 0px 4px rgba(179, 177, 177, 0.301);
+
                             &:focus {
                                 outline: none;
                                 color: #ffffff;
@@ -328,7 +342,7 @@ body {
                             }
                         }
                     }
-                    
+
 
 
 
@@ -419,7 +433,7 @@ body {
 
     main {
         margin-top: 250px;
-        background-color: #979797;
+        background-color: color-body;
         height: 100%;
         width: 100%;
         display: flex;
@@ -434,7 +448,7 @@ body {
             display: block;
             font-size: 3em;
 
-            color: #1f1f1f;
+            color: $color-text-main;
             font-family: 'Bonny', serif;
 
             &::after {
@@ -891,14 +905,13 @@ body {
             .articulo {
                 border: 1px solid;
                 margin: 10px;
-                background-color: rgba(255, 255, 255, 0);
-                box-shadow: 0 5px 10px rgba(100, 100, 100, 0.5);
+                padding: 10px;
                 display: flex;
                 justify-content: flex-start;
-                align-items: center;
+                align-items: flex-start;
                 flex-direction: column;
-                width: 20vw;
-                height: 55vh;
+                width: auto;
+                height: auto;
                 border-radius: 10px;
                 gap: 10px;
                 transition: all 0.7s ease-in-out;
@@ -907,12 +920,16 @@ body {
                 &:hover {
                     img {
                         filter: brightness(60%);
+                        
                     }
-
+                    .agregar{
+                        visibility:visible;
+                    }
                     cursor: pointer;
                 }
 
                 .product-price {
+                    padding-left: 10px;
                     font-family: 'Times New Roman', Times, serif;
                     font-size: 1.4em;
                     font-weight: 600;
@@ -920,25 +937,32 @@ body {
                 }
 
                 .product-name {
-
+                    padding-left: 10px;
                     font-family: "Rasputin";
                     font-weight: 500;
                     font-size: 1.4em;
                     color: #333333;
                 }
 
+                .product-stock {
+                    padding-left: 10px;
+                    color: rgb(83, 82, 82);
+                }
+
                 .agregar {
+                    transition: all 0.2s ease-in-out;
+                    margin-left: 10px;
                     display: flex;
                     justify-content: center;
                     align-items: center;
                     cursor: pointer;
                     background-color: #776344;
                     color: rgb(255, 255, 255);
-                    margin-top: 40%;
-                    height: 40px;
-                    width: 60%;
+                    visibility: hidden;
+                    height: 25px;
+                    width: 100px;
                     border-radius: 30px;
-                    font-size: 1em;
+                    font-size: .6em;
 
                     &:hover {
                         background-color: #5e4e36;
@@ -948,9 +972,9 @@ body {
 
 
                 img {
-                    margin-top: 7px;
-                    width: 15vw;
-                    height: 25vh;
+                    transition: all 0.7s ease-in-out;
+                    width: 20vw;
+                    height: 30vh;
                     border-radius: 10px 10px 0px 0px;
 
                 }
